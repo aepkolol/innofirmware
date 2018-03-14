@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <link href="/static/layui/css/layui.css" rel="stylesheet" >
+    <link href="/static/css/index.css?v=1.0" rel="stylesheet" >
+    <title>Miner Console</title>
+</head>
+<body>
+<div class="header">
+    <img src="/static/logo/logo.png" class="logo p20" />
+</div>
+
+<ul class="nav fgrayh mt5 layui-clear">
+    <li class="navhover"><a href="/index.html">Miner Status</a></li>
+    <li><a href="/html/generalsettings.html">Miner Configuration</a></li>
+    <li><a href="/html/overview.html">System</a></li>
+    <li><a href="/html/settings.html">Network</a></li>
+</ul>
+<ul class="navchild nav2 layui-clear">
+    <li><a href="/html/overview.html">Overview</a></li>
+    <li><a href="/html/administration.html">Administration</a></li>
+    <li><a href="/html/upgrade.html">Upgrade</a></li>
+    <li><a href="/html/reboot.html">Reboot</a></li>
+</ul>
+<ul class="navchild nav1 layui-clear">
+    <li><a href="/html/generalsettings.html">General Settings</a></li>
+</ul>
+<ul class="navchild nav0 layui-clear" style="display:block;">
+    <li class="navhover"><a href="/index.html">Miner Status</a></li>
+</ul>
+<ul class="navchild nav3 layui-clear">
+    <li><a href="/html/settings.html">Settings</a></li>
+</ul>
+<div class="content p10" id="miner_status">
+    <div class="title">
+        <h1 class="f18 bborder p5-y">Miner Status</h1>
+    </div>
+    <!--<div style="margin-top: 10px;"><span class="Refresh fr">Auto Refresh : <span>0</span></span></div>-->
+    <div class="dashedk">
+        <h3 class="panel-title p5 dtitle f16"><strong>Summary</strong></h3>
+        <table class="contable" width="100%">
+            <thead>
+            <th width="20%">Running Time</th>
+            <th width="20%">Accepted / Rejected</th>
+            <th width="20%">HW</th>
+            <th width="20%">Fan Speed</th>
+            <th width="20%">Total HashRate(<span class="speed_type">MHS</span>) </th>
+            </thead>
+            <tbody class="total-info">
+            <tr>
+                <td colspan="5"><img src="../static/images/loading.gif" alt=""></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="dashedk">
+        <h3 class="panel-title p5 dtitle f16"><strong>MinerInfo</strong></h3>
+        <table class="contable" width="100%">
+            <thead>
+            <th width="10%">Chain#</th>
+            <th width="20%">Accepted / Rejected</th>
+            <th width="15%">HW</th>
+            <th width="25%">Temp min / Temp max / Temp avg</th>
+            <th width="15%">Status</th>
+            <th width="15%">HashRate(<span class="speed_type">MHS</span>)</th>
+            </thead>
+            <tbody class="info">
+            <tr>
+                <td colspan="6"><img src="../static/images/loading.gif" alt=""></td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="padding:10px 0;"><strong>Warning: if a chain is down, please check loose cable connection, low temperature or overheating conditions. </strong></div>
+    </div>
+    <div class="dashedk">
+        <h3 class="panel-title p5 dtitle f16"><strong>Pools</strong></h3>
+        <table class="contable" width="100%" style="table-layout:fixed">
+            <thead>
+            <th width="7%">Pool</th>
+            <th width="24%" style="text-align:left;">URL</th>
+            <th width="13%" style="text-align:left;">User</th>
+            <th width="13%">Status</th>
+            <th width="13%">GetWorks</th>
+            <th width="13%">Accepted</th>
+            <th width="13%">Rejected</th>
+            </thead>
+            <tbody class="pools_info">
+            <tr>
+                <td colspan="8"><img src="../static/images/loading.gif" alt=""></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="/static/js/jquery.js?v=1.0" type="text/javascript"></script>
+<script src="/static/layui/layui.js" type="text/javascript"></script>
+<script src="/static/js/index.js?v=1.0" type="text/javascript"></script>
+<script>
+    layui.use('layer',function()
+    {
+        var layer = layui.layer;
+        var myurl=getQueryString("action");
+        if(myurl !=null && myurl.toString().length>1 && myurl == 'reboot')
+        {
+            layer.msg('booting...',{time:0,icon:16});
+            setTimeout('check()',2000);
+        }
+        getApi();
+        temper();
+    });
+    var minername = getMinerNameValue(),msg;
+    function temper()
+    {
+        var url = "cgi-bin/temper.py";
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: '',
+            dataType: "json",
+            success:function(json){
+                layer.closeAll();
+                $.each(json.DEVS, function(name, value){
+                    if(minername == 17 || minername == 18){
+                        if(value.PREHT == 1){
+                            layer.msg('<span style="font-weight:bold;color:red;">Low temperature, miner is heating up with idle fan, needs to reach 30 degrees before turning...</span>',{time:0,icon:16,id:"msg_detail",area:['780px']});
+                        }else{
+                            if(value.CPIDA != 0){
+                                if(value.CPIDB == 0){
+                                    msg ='chain '+ value.CID+' chip '+value.CPIDA+' highest overheat '+value.TEMPH;
+                                    layer.msg('<span style="font-weight:bold;color:red;">'+msg+'</span>',{time:0,icon:0});
+                                }else{
+                                    msg = 'chain '+value.CID+' overheat '+value.TEMPH;
+                                    layer.msg('<span style="font-weight:bold;color:red;">'+msg+'</span>',{time:0,icon:0});
+                                }
+                            }
+//                            if(value.TEMPH != 0 && value.Status == 'Alive'){
+//                                if(value.CPIDA && value.CPIDB){
+//                                    var msg = 'chain '+value.CID+' overheats.Temperature:  '+value.TEMPH;
+//                                    layer.msg('<span style="font-weight:bold;color:red;">'+msg+'</span>',{time:0,icon:0,area:[,]});
+//                                    return;
+//                                }else{
+//                                    var msg = 'chain '+value.CID+' chip '+value.CPIDA+' overheats.Highest Temperature:'+value.TEMPH;
+//                                    layer.msg('<span style="font-weight:bold;color:red;">'+msg+'</span>',{time:0,icon:0,area:[,]});
+//                                }
+//                            }
+                        }
+                    }
+                });
+                setTimeout('temper()',10000);
+            },
+            error:function()
+            {
+                setTimeout('temper()',10000);
+            }
+        });
+    }
+    function getApi()
+    {
+        var url = "cgi-bin/api.py";
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {"rec":"getInfo"},
+            dataType: "json",
+            success:function(json)
+            {
+                layer.closeAll();
+                var total = '',info = '',pools_info = '',Accepted = 0,Rejected = 0,HW = 0,MHS = 0;
+                $.each(json.DEVS, function(name, value)
+                {
+                    Accepted+=value.Accepted;
+                    Rejected+=value.Rejected;
+                    HW+=value["Hardware Errors"];
+                    value['MHS av'] = value['MHS av'].toFixed(2);
+                    MHS+=parseFloat(value['MHS av']);
+                    if(value.Status == 'Alive')
+                    {
+                        info+= '<tr style="background-color:green;">';
+                    }
+                    else
+                    {
+                        info+= '<tr style="background-color:red;">';
+                    }
+                    info+= '<td>ASC'+value.ASC+'</td><td>'+value.Accepted+' / '+value.Rejected+'</td><td>'+value["Hardware Errors"]+'</td><td>'+value.TempMIN+' / '+value.TempMAX+' / '+value.TempAVG+'</td><td>'+value.Status+'</td><td>'+value["MHS av"]+'</td></tr>';
+                });
+                var time = json.DEVS[0]['Device Elapsed']*1000;
+                total = '<tr><td>'+format(time)+'</td><td>'+Accepted+' / '+Rejected+'</td><td>'+HW+'</td><td>'+json.DEVS[0]['DUTY']+'%</td><td>'+MHS.toFixed(2);+'</td></tr>';
+                $('.total-info').html(total);
+                $('.info').html(info);
+                $.each(json.POOLS, function(index, value)
+                {
+                    if(value['Stratum Active'])
+                    {
+                        pools_info+= '<tr style="background-color:green;">';
+                    }
+                    else
+                    {
+                        pools_info+= '<tr>';
+                    }
+                    pools_info+= '<td>'+(value.POOL+1)+'</td><td title="'+value.URL+'" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;">'+value.URL+'</td><td title="'+value.User+'" style="width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;">'+(value.User)+'</td><td>'+value.Status+'</td><td>'+value.Getworks+'</td><td>'+value.Accepted+'</td><td>'+value.Rejected+'</td></tr>';
+                });
+                $('.pools_info').html(pools_info);
+//                setTimeout('getApi()',3000);
+//                Refresh(3);
+            },
+            error:function()
+            {
+//                layer.msg('Fan will stop while miner heats up...',{time:100000,icon:16,id:"msg_detail"});
+                setTimeout('getApi()',5000);
+            }
+        });
+    }
+    function Refresh(num)
+    {
+        $('.Refresh span').text(num+'S');
+        num--;
+        if(num >= 0){
+            setTimeout('Refresh('+num+')',3000);
+        }
+    }
+    function check(){
+        $.ajax({
+            type: "POST",
+            url: 'cgi-bin/api.py',
+            data: '',
+            dataType: "json",
+            success: function(json) {
+                layer.closeAll();
+                window.location.href='index.html?'+Math.random();
+            },error:function() {
+                setTimeout("check()",1000);
+            }
+        });
+    }
+
+</script>
+</body>
+</html>
