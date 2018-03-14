@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <link href="../static/layui/css/layui.css" rel="stylesheet" >
+    <link href="../static/css/index.css?v=1.0" rel="stylesheet" >
+    <title>Miner Console</title>
+</head>
+<body>
+<div class="header">
+    <img src="/static/logo/logo.png" class="logo p20" />
+</div>
+
+<ul class="nav fgrayh mt5 layui-clear">
+    <li><a href="/index.html">Miner Status</a></li>
+    <li><a href="/html/generalsettings.html">Miner Configuration</a></li>
+    <li><a href="/html/overview.html">System</a></li>
+    <li class="navhover"><a href="/html/settings.html">Network</a></li>
+</ul>
+<ul class="navchild nav2 layui-clear">
+    <li><a href="/html/overview.html">Overview</a></li>
+    <li><a href="/html/administration.html">Administration</a></li>
+    <li><a href="/html/upgrade.html">Upgrade</a></li>
+    <li><a href="/html/reboot.html">Reboot</a></li>
+</ul>
+<ul class="navchild nav1 layui-clear">
+    <li><a href="/html/generalsettings.html">General Settings</a></li>
+</ul>
+<ul class="navchild nav0 layui-clear">
+    <li><a href="/index.html">Miner Status</a></li>
+</ul>
+<ul class="navchild nav3 layui-clear" style="display:block;">
+    <li class="navhover"><a href="/html/settings.html">Settings</a></li>
+</ul>
+<div class="content p10" id="network_settings">
+    <div class="title">
+        <h1 class="f18 bborder p5-y" style="font-weight: bold;">Network Settings</h1>
+    </div>
+    <div style="margin:15px 0;"><span>Network setup for Miner</span></div>
+    <form id="form1" class="layui-form layui-form-pane" autocomplete="off">
+    <div class="dashedk">
+            <table class="contable p30-x" width="100%">
+                <tr>
+                    <td width="45%">IP Status</td>
+                    <td width="55%" class="IpStatus">
+                        <div class="fl mr10"><img src="../static/images/emblem-shared.png" width="30" /><br/><a href="" target="_blank">eth0</a></div>
+                        <div class="fl">
+                            <strong>Type:</strong><span><img src="../static/images/loading.gif"></span><br/>
+                            <strong>IP Address:</strong><span><img src="../static/images/loading.gif"></span><br/>
+                            <strong>Netmask:</strong><span><img src="../static/images/loading.gif"></span><br/>
+                            <strong>Gateway:</strong><span><img src="../static/images/loading.gif"></span><br/>
+                            <strong>Dns:</strong><span><img src="../static/images/loading.gif"></span><br/>
+                        </div>
+                    </td>
+                </tr>
+                <!-- <tr> -->
+                <!-- <td width="45%">Hostname</td> -->
+                <!-- <td width="55%"> -->
+                <!-- <input name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" type="text" style="width:45%"> -->
+                <!-- </td> -->
+                <!-- </tr> -->
+                <!--<tr class="none">-->
+                    <!--<td width="45%">Protocol</td>-->
+                    <!--<td width="55%">-->
+                        <!--<select name="protocol" style="width:45%" disabled="disabled">-->
+                            <!--<option value="static">Static</option>-->
+                            <!--<option value="dhcp">DHCP</option>-->
+                        <!--</select>-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td width="45%">IP Address</td>-->
+                    <!--<td width="55%">-->
+                        <!--<input name="ipaddress"  class="layui-input" type="text" style="width:45%">-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td width="45%">Netmask</td>-->
+                    <!--<td width="55%">-->
+                        <!--<input name="netmask"  class="layui-input" type="text" style="width:45%">-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td width="45%">Gateway</td>-->
+                    <!--<td width="55%">-->
+                        <!--<input name="gateway"  class="layui-input" type="text" style="width:45%">-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td width="45%">DNS Servers 1</td>-->
+                    <!--<td width="55%">-->
+                        <!--<input name="dns1"  class="layui-input" type="text" style="width:45%">-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td width="45%">DNS Servers 2</td>-->
+                    <!--<td width="55%">-->
+                        <!--<input name="dns2"  class="layui-input" type="text" style="width:45%">-->
+                    <!--</td>-->
+                <!--</tr>-->
+            </table>
+            <!--<input name="dhcp" type="hidden" value="static">-->
+    </div>
+        <div class="dashedk">
+            <div class="title">
+                <h3 class="panel-title p5 dtitle f16"><strong>Settings</strong></h3>
+            </div>
+
+            <!-- IP -->
+            <div style="padding-left: 11px;margin-bottom: -10px;"><input name="dhcp" value="dhcp" title="DHCP" checked="" type="radio" lay-filter="ip_type"></div>
+            <fieldset class="dashedk" style="margin-top: 0px;background: none">
+                <legend><input name="dhcp" value="static" title="Static" type="radio" lay-filter="ip_type" style="background-color:white"></legend>
+                <table class="contable p30-x iptable" width="100%">
+                    <tr>
+                        <td width="45%">IP Address</td>
+                        <td width="55%">
+                            <input name="ipaddress"  class="layui-input" type="text" style="width:45%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="45%">Netmask</td>
+                        <td width="55%">
+                            <input name="netmask"  class="layui-input" type="text" style="width:45%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="45%">Gateway</td>
+                        <td width="55%">
+                            <input name="gateway"  class="layui-input" type="text" style="width:45%">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <!-- DNS -->
+            <div style="padding-left: 11px;margin-top: 20px;margin-bottom: -10px;" class="none"><input name="type_dns" value="autodns" title="Auto DNS" checked="" type="radio" lay-filter="type_dns"></div>
+            <fieldset class="dashedk" style="margin-top: 10px;background: none;">
+                <legend><div style="padding-left: 11px;">DNS</div><div class="none"><input name="type_dns" value="manualdns" title="Static DNS" type="radio" lay-filter="type_dns"></div></legend>
+                <table class="contable p30-x dnstable" width="100%">
+                    <tr>
+                        <td width="45%">DNS Servers 1</td>
+                        <td width="55%">
+                            <input name="dns1"  class="layui-input" type="text" style="width:45%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="45%">DNS Servers 2</td>
+                        <td width="55%">
+                            <input name="dns2"  class="layui-input" type="text" style="width:45%">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    </form>
+    <div style="padding-top:15px;" align="right">
+        <!-- <button class="layui-btn layui-btn-danger layui-btn-radius"><i class="layui-icon">&#x1006;</i>Reset</button> -->
+        <button class="layui-btn layui-btn-radius" onclick="Submit('form1');"><i class="layui-icon">&#xe605;</i>Save&Apply</button>
+    </div>
+</div>
+<script src="../static/js/jquery.js" type="text/javascript"></script>
+<script src="../static/layui/layui.js" type="text/javascript"></script>
+<script src="../static/js/index.js?v=1.0" type="text/javascript"></script>
+<script>
+    selfteststate();
+    layui.use('layer',function(){
+        var layer = layui.layer;
+        var getVal = window.location.search;
+        if(getVal == "?dhcp") {
+            dhcp();
+        }
+        function dhcp(){
+            //$('input[name=dhcp]').val('dhcp');
+            $("[name=dhcp]:eq(0)").next().find("i").click();
+            Submit('form1');
+            //稍后再看
+            window.location.href='settings.html?'+ Math.random();
+        }
+    });
+
+    layui.use('form', function()
+    {
+        var form = layui.form;
+        // IE不支持legend属性，添加背景颜色美观
+        $(".layui-form-radio").css("background-color","white");
+        // 选渲染事件
+        form.on('radio(ip_type)', function(data)
+        {
+            if(data.value == 'dhcp')
+            {
+                $("[name=type_dns]:eq(1)").attr("disabled","").next().addClass("layui-radio-disbaled layui-disabled").removeClass("layui-form-radioed");
+                $("[name=type_dns]:eq(0)").next().find("i").click();
+                $(".iptable").css({"color":"#D4D4D4"});
+                $(".iptable").find("input").attr("disabled","disabled");
+            }
+            else if(data.value == 'static')
+            {
+                // $("[name=type_dns]:eq(0)").attr("disabled","").next().addClass("layui-radio-disbaled layui-disabled").removeClass("layui-form-radioed");
+                $("[name=type_dns]:eq(1)").removeAttr("disabled").next().removeClass("layui-radio-disbaled layui-disabled");
+                $("[name=type_dns]:eq(1)").next().find("i").click();
+
+                $(".iptable").css({"color":"black"});
+                $(".iptable").find("input").removeAttr("disabled");
+
+                //如果dns为空值则填入默认值
+                var dns1_val = $("[name=dns1]").val();
+                var dns2_val = $("[name=dns2]").val();
+                if(dns1_val.trim().length == 0)
+                {
+                    $("[name=dns1]").val('8.8.8.8');
+                }
+                if(dns2_val.trim().length == 0)
+                {
+                    $("[name=dns2]").val('114.114.114.114');
+                }
+            }
+        });
+
+        form.on('radio(type_dns)', function(data)
+        {
+            if(data.value == 'autodns')
+            {
+                $(".dnstable").css({"color":"#D4D4D4"});
+                $(".dnstable").find("input").attr("disabled","disabled");
+            }
+            else if(data.value == 'manualdns')
+            {
+                $(".dnstable").css({"color":"black"});
+                $(".dnstable").find("input").removeAttr("disabled");
+            }
+        });
+
+    });
+    //获取网络信息
+    getNetwork();
+    //获取网络信息
+    function getNetwork()
+    {
+        $.ajax({
+            url: '../cgi-bin/network.py',
+            type: "POST",
+            data: '',
+            dataType: "json",
+            success:function(json)
+            {
+                //console.log(json);
+                $(".MinerType").html(json.type);
+                //IPAddress
+                $(".IpStatus").find("span:eq(1)").html(json.ipaddress);
+                //Netmask
+                $(".IpStatus").find("span:eq(2)").html(json.netmask);
+                //Gateway
+                $(".IpStatus").find("span:eq(3)").html(json.gateway);
+                //DNS
+                $(".IpStatus").find("span:eq(4)").html((json.dns).toString());
+                //Type
+                $(".IpStatus").find("span:eq(0)").html((json.dhcp).toString());
+
+                //填入默认值
+                $("[name=ipaddress]").attr({"value":json.ipaddress,"placeholder":json.ipaddress});
+                $("[name=netmask]").attr({"value":json.netmask,"placeholder":json.netmask});
+                $("[name=gateway]").attr({"value":json.gateway,"placeholder":json.gateway});
+                $("[name=dns1]").attr({"value":json.dns[0],"placeholder":json.dns[0]});
+                $("[name=dns2]").attr({"value":json.dns[1],"placeholder":json.dns[1]});
+
+                type = json.dhcp;
+                ip_type_val = "enable";
+                if(type == "dhcp")
+                {
+                    ip_type_val = "enable";
+                }
+                else if(type == "static")
+                {
+                    ip_type_val = "disable";
+                }
+
+                if(ip_type_val == 'disable')
+                {
+                    $("[name=dhcp]:eq(1)").next().find("i").click();
+                    $("[name=type_dns]:eq(1)").next().find("i").click();
+                }
+                else if(ip_type_val == 'enable')
+                {
+                    $("[name=type_dns]:eq(1)").attr("disabled","").next().addClass("layui-radio-disbaled layui-disabled").removeClass("layui-form-radioed");
+                    $("[name=dhcp]:eq(0)").next().find("i").click();
+                }
+            }
+        });
+    }
+
+    //提交按钮
+    function Submit(form){
+        var formParam = $('#'+form).serialize();
+        var json = parseQueryString(formParam);//转化为json
+//        console.log(json.dhcp);
+        if(!json){return;}
+        var url="../cgi-bin/submit_net.py";
+        //console.log(json);
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: json,
+            dataType: "json",
+            beforeSend:function()
+            {
+                layer.load();
+            }
+        });
+        if(json.dhcp == 'dhcp')
+        {
+            setTimeout('dhcp_show()',5000);
+	    return false;
+        }
+        isok(json.ipaddress);
+    }
+
+    function dhcp_show()
+    {
+        layer.closeAll('loading');
+        layer.msg('DHCP is enabled, please access the device via new ip address',{time:0,area:[,]});
+    }
+
+    function isok(ip){//跨域判断
+        var url = 'http://'+ip+'/cgi-bin/newip_isok.py';
+        var xhr = $.ajax({
+            type: "GET",
+            url: url,
+            data: '',
+            dataType: "jsonp",
+            success:function(data) {
+                layer.closeAll('loading');
+                layer.msg('success', {
+                    time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                }, function(){
+                    window.location.href='http://'+ip+'/html/settings.html?'+ Math.random();
+                });
+            }
+        });
+        jsonp(xhr,ip);
+    }
+
+    var num = 0;
+    function jsonp(xhr,ip) {
+        if(num == 40){
+            layer.msg('error');return;
+        }
+        // request failed
+        xhr.fail(function(jqXHR, textStatus, ex) {
+            num++;
+            setTimeout(isok(ip),1000);
+        });
+
+        // ie 8+, chrome and some other browsers
+        var head = document.head || $('head')[0] || document.documentElement; // code from jquery
+        var script = $(head).find('script')[0];
+        script.onerror = function(evt) {
+            num++;
+            setTimeout(isok(ip),1000);
+            // do some clean
+
+            // delete script node
+            if (script.parentNode) {
+                script.parentNode.removeChild(script);
+            }
+            // delete callback global function
+            var src = script.src || '';
+            var idx = src.indexOf('callback=');
+            if (idx != -1) {
+                var idx2 = src.indexOf('&');
+                if (idx2 == -1) {
+                    idx2 = src.length;
+                }
+                var callback = src.substring(idx + 13, idx2);
+                delete window[callback];
+            }
+        };
+    }
+    //url转json
+    function parseQueryString(url)
+    {
+        var obj={};
+        var keyvalue=[];
+        var dnsvalue=[];
+        var key="",value="";
+        var paraString=url.split("&");
+        for(var i in paraString)
+        {
+            keyvalue=paraString[i].split("=");
+            key=keyvalue[0];
+            value=keyvalue[1];
+            var getVal = window.location.search;
+            if(getVal == "?dhcp") {
+                obj[key] = value;
+            }else{
+                if(value == '' && (key == 'ipaddress' || key == 'gateway' || key == 'netmask' || key == 'dns1' || key == 'dns2' || key == 'protocol')){
+                    layer.msg(key+' is not empty');return false;
+                }
+                if(key == 'ipaddress'){
+                    if(isValidIP(value) == false){
+                        layer.msg(key+' is wrong');return false;
+                    }
+                }
+                if(key == 'netmask'){
+                    if(checkMask(value) == false){
+                        layer.msg(key+' is wrong');return false;
+                    }
+                }
+                if(key.substr(0,3) == 'dns'){
+                    if(isValidIP(value) == false){
+                        layer.msg(key+' is wrong');return false;
+                    }
+                    dnsvalue.push(value);
+                }else{
+                    obj[key]=value;
+                }
+            }
+        }
+        checkNet(obj['ipaddress'],obj['netmask'],obj['gateway']);
+        obj['dns'] = dnsvalue;
+        return obj;
+    }
+</script>
+</body>
+</html>

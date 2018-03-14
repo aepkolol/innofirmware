@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+    <link href="../static/layui/css/layui.css" rel="stylesheet" >
+    <link href="../static/css/index.css?v=1.0" rel="stylesheet" >
+    <title>Miner Console</title>
+</head>
+<body>
+<div class="header">
+    <img src="/static/logo/logo.png" class="logo p20" />
+</div>
+<ul class="nav fgrayh mt5 layui-clear">
+    <li><a href="/index.html">Miner Status</a></li>
+    <li><a href="/html/generalsettings.html">Miner Configuration</a></li>
+    <li class="navhover"><a href="/html/overview.html">System</a></li>
+    <li><a href="/html/settings.html">Network</a></li>
+</ul>
+<ul class="navchild nav2 layui-clear" style="display:block;">
+    <li class="navhover"><a href="/html/overview.html">Overview</a></li>
+    <li><a href="/html/administration.html">Administration</a></li>
+    <li><a href="/html/upgrade.html">Upgrade</a></li>
+    <li><a href="/html/reboot.html">Reboot</a></li>
+</ul>
+<ul class="navchild nav1 layui-clear">
+    <li><a href="/html/generalsettings.html">General Settings</a></li>
+</ul>
+<ul class="navchild nav0 layui-clear">
+    <li><a href="/index.html">Miner Status</a></li>
+</ul>
+<ul class="navchild nav3 layui-clear">
+    <li><a href="/html/settings.html">Settings</a></li>
+</ul>
+
+<div class="content p10">
+    <div class="title">
+        <h1 class="f18 bborder p5-y">Overview</h1>
+    </div>
+    <div class="dashedk">
+        <h3 class="panel-title p5 dtitle f16"><strong>Version</strong></h3>
+        <table class="contable p30-x" width="100%">
+            <tr>
+                <td width="45%">Miner Type</td>
+                <td width="55%" class="MinerType"><img src="../static/images/loading.gif"></td>
+            </tr>
+            <tr>
+                <td width="45%">Hw Version</td>
+                <td width="55%" class="HwVersion"><img src="../static/images/loading.gif"></td>
+            </tr>
+            <!--<tr>-->
+                <!--<td width="45%">DNA</td>-->
+                <!--<td width="55%" class="dna"><img src="../static/images/loading.gif"></td>-->
+            <!--</tr>-->
+            <tr>
+                <td width="45%">MAC Addr</td>
+                <td width="55%" class="ethaddr"><img src="../static/images/loading.gif"></td>
+            </tr>
+            <tr>
+                <td width="45%">Build Date</td>
+                <td width="55%" class="BuildDate"><img src="../static/images/loading.gif"></td>
+            </tr>
+            <tr style="display:none;">
+                <td width="45%">Memtester Version</td>
+                <td width="55%" class="MemtesterVersion"><img src="../static/images/loading.gif"></td>
+            </tr>
+            <tr style="display:none;">
+                <td width="45%">Openssl Version</td>
+                <td width="55%" class="OpensslVersion"><img src="../static/images/loading.gif"></td>
+            </tr>
+            <tr style="display:none;">
+                <td width="45%">Cpuminer Version</td>
+                <td width="55%" class="CpuminerVersion"><img src="../static/images/loading.gif"></td>
+            </tr>
+            <tr style="display:none;">
+                <td width="45%">Cpython Version</td>
+                <td width="55%" class="CpythonVersion"><img src="../static/images/loading.gif"></td>
+            </tr>
+            <tr>
+                <td width="45%">Platform Version</td>
+                <td width="55%" class="PlatformVersion"><img src="../static/images/loading.gif"></td>
+            </tr>
+            <tr style="display:none;">
+                <td width="45%">Kernel Version</td>
+                <td width="55%" class="KernelVersion"><img src="../static/images/loading.gif"></td>
+            </tr>
+            <tr>
+                <td width="45%">Rootfs Version</td>
+                <td width="55%" class="RootfsVersion"><img src="../static/images/loading.gif"></td>
+            </tr>
+           <tr style="display:none;">
+                <td width="45%">Uboot Version</td>
+                <td width="55%" class="UbootVersion"><img src="../static/images/loading.gif"></td>
+            </tr>
+           <tr style="display:none;">
+                <td width="45%">Busybox Version</td>
+                <td width="55%" class="BusyboxVersion"><img src="../static/images/loading.gif"></td>
+            </tr>
+           <tr style="display:none;">
+                <td width="45%">Cgminer Version</td>
+                <td width="55%" class="CgminerVersion"><img src="../static/images/loading.gif"></td>
+            </tr>
+            <tr style="display:none;">
+                <td width="45%">Sgminer Version</td>
+                <td width="55%" class="SgminerVersion"><img src="../static/images/loading.gif"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="dashedk">
+        <h3 class="panel-title p5 dtitle f16"><strong>System</strong></h3>
+        <table class="contable p30-x" width="100%">
+			<!--<tr><td colspan="2" style="text-align:right;font-size:12px;" class="Refresh">Auto Refresh : <span>0</span></td></tr>-->
+           <tr>
+                <td width="45%">Status</td>
+                <td width="55%" class="Status"><img src="../static/images/loading.gif"></td>
+            </tr>
+            <tr>
+                <td width="45%">Memory Available</td>
+                <td width="55%" class="MemoryAvailable">
+                    <div class="progressbar border text-center"><div class="progressbarbg" style="width: 0%;"></div><div class="progressbartext text-center"><span id="test"></span> kb / <span></span> kb(<span></span>%)</div></div>
+                </td>
+            </tr>
+            <tr>
+                <td width="45%">Memory Free</td>
+                <td width="55%" class="MemoryFree">
+                    <div class="progressbar border text-center"><div class="progressbarbg" style="width: 0%;"></div><div class="progressbartext text-center"><span></span> kb / <span></span> kb(<span></span>%)</div></div>
+                </td>
+            </tr>
+            <tr>
+                <td width="45%">Cached Available</td>
+                <td width="55%" class="CachedAvailable">
+                    <div class="progressbar border text-center"><div class="progressbarbg" style="width: 0%;"></div><div class="progressbartext text-center"><span></span> kb / <span></span> kb(<span></span>%)</div></div>
+                </td>
+            </tr>
+            <tr>
+                <td width="45%">Cached Free</td>
+                <td width="55%" class="CachedFree">
+                    <div class="progressbar border text-center"><div class="progressbarbg" style="width: 0%;"></div><div class="progressbartext text-center"><span></span> kb / <span></span> kb(<span></span>%)</div></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="dashedk">
+        <h3 class="panel-title p5 dtitle f16"><strong>Network</strong></h3>
+        <table class="contable p30-x" width="100%">
+            <tr>
+                <td width="45%">IP Status</td>
+                <td width="55%" class="IpStatus">
+                    <div class="fl mr10"><img src="../static/images/emblem-shared.png" width="30" /><br/><a href="" target="_blank">eth0</a></div>
+                    <div class="fl">
+                        <strong>Address:</strong><span><img src="../static/images/loading.gif"></span><br/>
+                        <strong>Netmask:</strong><span><img src="../static/images/loading.gif"></span><br/>
+                        <strong>Gateway:</strong><span><img src="../static/images/loading.gif"></span><br/>
+                        <strong>Dns:</strong><span><img src="../static/images/loading.gif"></span><br/>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script src="../static/js/jquery.js" type="text/javascript"></script>
+<script src="../static/layui/layui.js" type="text/javascript"></script>
+<script src="../static/js/index.js?v=1.3" type="text/javascript"></script>
+<script>
+    layui.use('layer',function(){
+        var layer = layui.layer;
+        var getVal = window.location.search;
+        if(getVal == "?debug") {
+            debug();
+        }else if(getVal == "?logo"){//chglogo.py resetlogo.py
+            logo();
+        }
+        //选择文件
+        $('#file').click(function(){
+            return $('input[name=file]').click();
+        });
+    });
+    //图片后缀限制
+    var suffix = new Array("jpg","jpeg","gif","png","image/jpg","image/jpeg","image/gif","image/png");
+    //logo是否空
+    function nologo(t){
+        if($(t).val() == 1) {
+            $('#file,input[name=fileName],#upload_tip,.resetlogo').hide();
+        }else{
+            $('#file,input[name=fileName],#upload_tip,.resetlogo').show();
+        }
+    }
+    function Update(){
+        var nologo = $('input[name=nologo]:checked').val();
+        if(nologo == 0) {
+            var file = $('input[name=file]').get(0).files[0];
+            if(!file){
+                layer.msg('no file');return;
+            }
+            else if( (file.size/1024).toFixed(2) > 512 )
+            {
+                layer.msg('Max size 512KB');return;
+            }
+            else if($.inArray(file.type,suffix) < 0)
+            {
+                layer.msg('file-type limited');return;
+            }
+        }
+        var fd = new FormData();
+        fd.append("nologo", nologo);
+        fd.append("logofile", file);
+
+        $.ajax({
+            url: "../cgi-bin/chglogo.py",
+            type: "POST",
+            processData: false,
+            contentType: false,
+            data: fd,
+            dataType: 'json',
+    		beforeSend:function(){
+                layer.load();
+            },
+            success: function(json) {
+                if(json.result == 'true'){
+                    layer.closeAll('loading');
+                    layer.msg('success', {
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function(){
+                        window.location.href='overview.html?'+ Math.random();
+                    });
+                }
+            }
+        });
+        $('.Update').attr('onclick','');
+        $('.Update').addClass('layui-disabled');
+    }
+    //恢复默认logo
+    function resetlogo(){
+        $.ajax({
+            url: "../cgi-bin/resetlogo.py",
+            type: "POST",
+            processData: false,
+            contentType: false,
+            data: '',
+            dataType: 'json',
+            beforeSend:function(){
+                layer.load();
+            },
+            success: function(json) {
+                if(json.result == 'true'){
+                    layer.closeAll('loading');
+                    layer.msg('success', {
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function(){
+                        window.location.href='overview.html?'+ Math.random();
+                    });
+                }
+            }
+        });
+        $('.Update').attr('onclick','');
+        $('.Update').addClass('layui-disabled');
+    }
+	getVersion();
+	getMinerName();
+	getNetwork();
+	getSystemInfo();
+	function getVersion()
+	{
+        $.ajax({
+            type: "POST",
+            url: "../cgi-bin/version.py",
+            data: '',
+            dataType: "json",
+            success:function(json) 
+			{
+				//console.log(json);
+				$(".BuildDate").html(json.build_date);
+                $(".MemtesterVersion").html(json.memtester_v);
+                $(".ethaddr").html(json.ethaddr);
+				$(".OpensslVersion").html(json.openssl_v);
+				$(".SgminerVersion").html(json.sgminer_v);
+				$(".CpuminerVersion").html(json.cpuminer_v);
+				$(".CpythonVersion").html(json.cpython_v);
+				$(".PlatformVersion").html(json.platform_v);
+				$(".KernelVersion").html(json.kernel_v);
+				$(".RootfsVersion").html(json.rootfs_v);
+				$(".UbootVersion").html(json.uboot_v);
+				$(".BusyboxVersion").html(json.busybox_v);
+				$(".CgminerVersion").html(json.cgminer_v);
+				//$(".Status").html(json.status);
+				$(".HwVersion").html(json.hwver);
+				$(".dna").html(json.dna);
+            },
+			error:function()
+			{
+                
+            }
+        });	
+	}
+	function getMinerName()
+	{
+        var type = getMinerNameValue();
+        $(".MinerType").html(type);
+    }
+	function getNetwork()
+	{
+		$.ajax({
+			url: '../cgi-bin/network.py',
+			type: "POST",
+			data: '',
+			dataType: "json",
+			success:function(json)
+			{
+				//console.log(json);
+				$(".MinerType").html(json.type);
+				//IPAddress
+				$(".IpStatus").find("span:eq(0)").html(json.ipaddress);
+				//Netmask
+				$(".IpStatus").find("span:eq(1)").html(json.netmask);
+				//Gateway
+				$(".IpStatus").find("span:eq(2)").html(json.gateway);
+				//DNS
+				$(".IpStatus").find("span:eq(3)").html((json.dns).toString());
+			}
+		});
+	}
+
+	//获取系统信息（每3s）
+	function getSystemInfo()
+	{
+		var url="../cgi-bin/system.py"
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: '',
+            dataType: "json",
+            success:function(json) 
+			{
+				//console.log(json);
+				//MemoryAvailable
+				var percent_ma = (json.memUsed/json.memTotal).toFixed(2);
+				$(".MemoryAvailable").find("span:eq(0)").html(json.memUsed);
+				$(".MemoryAvailable").find("span:eq(1)").html(json.memTotal);
+				$(".MemoryAvailable").find("span:eq(2)").html((percent_ma * 100).toFixed(0));
+				$(".MemoryAvailable").find("div:eq(1)").css("width",(percent_ma * 100)+"%");
+				//MemoryFree
+				var percent_mf = (json.memFree/json.memTotal).toFixed(2);
+				$(".MemoryFree").find("span:eq(0)").html(json.memFree);
+				$(".MemoryFree").find("span:eq(1)").html(json.memTotal);
+				$(".MemoryFree").find("span:eq(2)").html((percent_mf * 100).toFixed(0));
+				$(".MemoryFree").find("div:eq(1)").css("width",(percent_mf * 100)+"%");
+				//CachedAvailable
+				var percent_ca = (json.cacheUsed/json.cacheTotal).toFixed(2);
+				$(".CachedAvailable").find("span:eq(0)").html(json.cacheUsed);
+				$(".CachedAvailable").find("span:eq(1)").html(json.cacheTotal);
+				$(".CachedAvailable").find("span:eq(2)").html((percent_ca * 100).toFixed(0));
+				$(".CachedAvailable").find("div:eq(1)").css("width",(percent_ca * 100)+"%");
+				//CachedFree
+				var percent_cf = (json.cacheFree/json.cacheTotal).toFixed(2);
+				$(".CachedFree").find("span:eq(0)").html(json.cacheFree);
+				$(".CachedFree").find("span:eq(1)").html(json.cacheTotal);
+				$(".CachedFree").find("span:eq(2)").html((percent_cf * 100).toFixed(0));
+				$(".CachedFree").find("div:eq(1)").css("width",(percent_cf * 100)+"%");
+				//Status
+				$(".Status").html(json.status);
+//                setTimeout('getSystemInfo()',3000);
+//                Refresh(3);
+            },
+			error:function()
+			{
+                
+            }
+        });
+	}
+
+	//倒计时
+    function Refresh(num)
+	{
+        $('.Refresh span').text(num+'S');
+        num--;
+        if(num >= 0){
+            setTimeout('Refresh('+num+')',1000);
+        }
+
+    }
+</script>
+</body>
+</html>

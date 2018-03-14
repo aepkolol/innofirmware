@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <link href="../static/layui/css/layui.css" rel="stylesheet" >
+    <link href="../static/css/index.css?v=1.0" rel="stylesheet" >
+    <title>Miner Console</title>
+    <style>
+        .pool_div{ margin:15px 3px 0 0;padding:5px 2px;width: 49.2%;display: inline-block;}
+        .pool_div td{padding-left: 20px !important;}
+    </style>
+</head>
+<body>
+<div class="header">
+    <img src="/static/logo/logo.png" class="logo p20" />
+</div>
+
+<ul class="nav fgrayh mt5 layui-clear">
+    <li><a href="/index.html">Miner Status</a></li>
+    <li class="navhover"><a href="/html/generalsettings.html">Miner Configuration</a></li>
+    <li><a href="/html/overview.html">System</a></li>
+    <li><a href="/html/settings.html">Network</a></li>
+</ul>
+<ul class="navchild nav2 layui-clear">
+    <li><a href="/html/overview.html">Overview</a></li>
+    <li><a href="/html/administration.html">Administration</a></li>
+    <li><a href="/html/upgrade.html">Upgrade</a></li>
+    <li><a href="/html/reboot.html">Reboot</a></li>
+</ul>
+<ul class="navchild nav1 layui-clear" style="display:block;">
+    <li class="navhover"><a href="/html/generalsettings.html">General Settings</a></li>
+</ul>
+<ul class="navchild nav0 layui-clear">
+    <li><a href="/index.html">Miner Status</a></li>
+</ul>
+<ul class="navchild nav3 layui-clear">
+    <li><a href="/html/settings.html">Settings</a></li>
+</ul>
+<div class="content p10" id="generalsettings">
+    <div class="title">
+        <h1 class="f18 bborder p5-y" style="font-weight: bold;">Miner General Configuration</h1>
+    </div>
+        <form id="form" onsubmit="return false;">
+        <div class="dashedk">
+            <h3 class="panel-title p5 dtitle f16"><strong>Pools</strong></h3>
+            <div class="layui-clear">
+                <div class="dashedk pool_div fl">
+                    <h3 class="panel-title p5 dtitle f16"><strong>Pool1</strong></h3>
+                    <table class="contable p30-x" width="100%">
+                        <tr>
+                            <td width="20%">URL</td>
+                            <td width="80%" class="pool1_select">
+                                <input name="Pool1" value="" class="layui-input" type="text" style="width:90%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Worker</td>
+                            <td class="UserName1">
+                                <input name="UserName1" value="" class="layui-input" type="text" style="width:90%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>
+                                <input name="Password1" value="" class="layui-input" type="text" style="width:90%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="dashedk pool_div fl">
+                    <h3 class="panel-title p5 dtitle f16"><strong>Pool2</strong></h3>
+                    <table class="contable p30-x" width="100%">
+                        <tr>
+                            <td width="20%">URL</td>
+                            <td width="80%" class="pool2_select">
+                                <input name="Pool2" value="" class="layui-input" type="text" style="width:90%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Worker</td>
+                            <td class="UserName2">
+                                <input name="UserName2" value="" class="layui-input" type="text" style="width:90%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>
+                                <input name="Password2" value="" class="layui-input" type="text" style="width:90%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="dashedk pool_div fl">
+                    <h3 class="panel-title p5 dtitle f16"><strong>Pool3</strong></h3>
+                    <table class="contable p30-x" width="100%">
+                        <tr>
+                            <td width="20%">URL</td>
+                            <td width="80%">
+                                <input name="Pool3" value="" class="layui-input" type="text" style="width:90%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Worker</td>
+                            <td>
+                                <input name="UserName3" value="" class="layui-input" type="text" style="width:90%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>
+                                <input name="Password3" value="" class="layui-input" type="text" style="width:90%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="dashedk pool_div fl">
+                    <h3 class="panel-title p5 dtitle f16"><strong>Pool4</strong></h3>
+                    <table class="contable p30-x" width="100%">
+                        <tr>
+                            <td width="20%">URL</td>
+                            <td width="80%">
+                                <input name="Pool4" value="" class="layui-input" type="text" style="width:90%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Worker</td>
+                            <td>
+                                <input name="UserName4" value="" class="layui-input" type="text" style="width:90%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>
+                                <input name="Password4" value="" class="layui-input" type="text" style="width:90%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div style="padding-top:15px;" align="right">
+                <input type="button" class="layui-btn layui-btn-radius pool_sub" value="Save" >
+            </div>
+        </div>
+        </form>
+            <div class="dashedk FANSetup none" style="margin-top:15px;padding:10px 10px;">
+                <h3 class="panel-title p5 dtitle f16"><strong>FAN Setup</strong></h3>
+                <table class="contable p30-x" width="100%">
+                    <tr>
+                        <td width="20%" style="padding-left: 20px;">Fan Speed:</td>
+                        <td width="70%" class="Frequencytd">
+                            <select name="fanspeed"  class="layui-input w100" autocomplete="off" style="margin-left:15px;">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td class="Frequencytd" style="padding-bottom:15px;width:20%;text-align: right;padding:0px;">
+                            <input type="button" value="Save" class="layui-btn layui-btn-radius save_fan">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <form id="form1" onsubmit="return false;">
+        <div class="dashedk" style="padding:10px 10px;margin-top:15px;">
+            <h3 class="panel-title p5 dtitle f16"><strong>Frequency & Voltage</strong></h3>
+            <div class="dashedk" style="margin-top:15px;padding:10px 15px;">
+                <h3 class="panel-title p5 dtitle f16"><strong>Frequency</strong></h3>
+                <table class="contable p30-x" width="100%">
+                    <tr>
+                        <td width="20%">Miner Running Frequency(Mhz)</td>
+                        <td width="80%" class="">
+                            <div class="layui-form-item Frequencytdk fl" style="width: 30%;margin-right: 15px;">
+                                <div class="Frequency-select">
+                                    <select name="Frequency" class="layui-input"></select>
+                                </div>
+                            </div>
+                            <div class="Frequency-tipcon Frequency-tipcon-Frequency fl" style="width: 60%;">(Note: <span class="tip1"></span>MHz is our high hashrate frequency with voltage VID range of <span class="tip2"></span>. The lower VID value means the higher voltage or higher power consumption.If you want to try overclock frequency, you usually need to adjust VID to be lower.<br/>Warning: overclock is at your own risk and vary in performance from miner to miner. It may damage miner in overheating condition.) </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="dashedk" style="margin-top:15px;padding:10px 15px;">
+                <h3 class="panel-title p5 dtitle f16"><strong>Voltage</strong></h3>
+                <table class="contable p30-x" width="100%">
+                    <tr>
+                        <td width="10%" class="Frequencytd" style="padding-bottom:15px;">
+                            Manual control
+                            <input type="radio" name="vidmode" value="0" class="layui-radio" checked="checked" autocomplete="off"/>
+                        </td>
+                        <td width="30%" class="Frequencytd" style="padding-bottom:15px;">
+                            Auto control
+                            <input type="radio" name="vidmode" value="1" class="layui-radio" autocomplete="off"/> (Note:software auto search base values.)
+                        </td>
+						<td id="auto_search" width="10%" class="Frequencytd" style="padding-bottom:15px;">
+							<button class="layui-btn layui-btn-radius auto_search">Auto Search</button>
+						</td>
+                    </tr>
+                    <tr>
+                        <td width="20%">Miner Operational Voltage(Level)</td>
+                        <td width="80%" class="Frequencytd" style="padding-top: 20px;" colspan="2">
+                            <div class="layui-form-item Frequencytdk fl" style="width: 30%;margin-right: 15px;">
+                                <div class="Voltage-select">
+                                    <select name="Voltage" class="layui-input"></select>
+                                </div>
+                            </div>
+                            <!--<input name="Voltage" value="" class="layui-input fl" type="text" style="width: 30%;margin-right: 15px;">-->
+                            <div class="Frequency-tipcon Frequency-tipcon-Voltage fl" style="width: 60%;">(Note: VID <span class="tip1 fred"></span> is our default voltage setting and the most suitable value of VID may vary from miner to miner. User can slightly adjust VID up or down to get the best performance. <span class="tip3"></span>MHz is our default frequency with voltage VID range of <span class="tip2"></span>. The lower VID value means the higher voltage.If you want to try higher overclock frequency, you may need to adjust VID to be lower.<br/>Warning: overclock is at your own risk and vary in performance. It may damage miner in overheating condition.) </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="padding-top:15px;" align="right">
+                <button class="layui-btn layui-btn-radius vidsub">Save</button>
+            </div>
+        </div>
+        </form>
+        <div style="padding:15px 5px;" align="right">
+            <button class="layui-btn layui-btn-radius submit_all">Submit All</button>
+        </div>
+</div>
+<script src="../static/js/jquery.js" type="text/javascript"></script>
+<script src="../static/layui/layui.js" type="text/javascript"></script>
+<script src="../static/js/index.js?v=1.2.1" type="text/javascript"></script>
+<script>
+    selfteststate();
+    var minername = getMinerNameValue();
+    var islogin = getcookie('login');
+    if(!islogin){
+        window.location.href='login.html';
+    }
+
+    layui.use('layer',function(){
+        var layer = layui.layer;
+        $('.vidsub').click(function(){
+            Config('form1');
+        });
+        $('.pool_sub').click(function(){
+            Config('form');
+        });
+
+        $('.submit_all').click(function(){
+            Config('form1,form');
+        });
+        $('.auto_search').click(function()
+		{
+                $.ajax({// #/innocfg/defaultVID
+                    type: "POST",
+                    url: "../cgi-bin/selftest.py",
+                    data: '',
+                    dataType: "json",
+                    beforeSend:function(){
+                        layer.closeAll('loading');
+                        layer.load();
+                    }
+                });
+                selftest();
+        });
+        //var minername = getMinerNameValue();
+        if(minername == 19)
+        {
+            $(".FANSetup").removeClass("none");
+			$("#auto_search").remove();
+        }
+        else
+        {
+            $(".FANSetup").remove();
+        }
+        //提交按钮
+        function Config(form){
+            var vid_mode = $("[name=vidmode]:checked").val();
+            var voltage_val = $("[name=Voltage]").val();
+            var form_arr = form.split(",");
+
+            if(form_arr.length > 1)
+            {
+                if(vid_mode == 0 && !voltage_val)
+                {
+                    layer.msg('Voltage can not be empty');
+                    return false;
+                }
+                if(minername == 19)
+                {
+                    var formParam = $('#form').serialize()+'&'+$('#form1').serialize()+'&fanmode=0&fanspeed='+$("[name=fanspeed]").val();
+                }
+                else
+                {
+                    var formParam = $('#form').serialize()+'&'+$('#form1').serialize();
+                }
+
+            }
+            else
+            {
+                if(vid_mode == 0 && !voltage_val && form == 'form1')
+                {
+                    layer.msg('Voltage can not be empty');
+                    return false;
+                }
+                var formParam = $('#'+form).serialize();
+            }
+            formParam = formParam.replace(/\+/g," ");
+            var json = parseQueryString(formParam);//转化为json
+            if(!json){return;}
+            $.ajax({
+                url: '../cgi-bin/pool.py',
+                type: "POST",
+                data: json,
+                dataType: "json",
+                beforeSend:function() {
+                    layer.load();
+                },
+                success:function(json){
+                    if(json.result == 'true'){
+//                        delcookie('login');
+                        layer.msg(json.errmsg, {
+                            time: 5000, //2秒关闭（如果不配置，默认是3秒）
+                            area:[,]
+                        }, function(){
+                            window.location.href='../index.html?action=reboot&'+Math.random();
+                        });
+                    }else{
+                        layer.closeAll('loading');
+                        layer.msg(json.errmsg,{time:5000,area:[,]});
+                    }
+                }
+            });
+        }
+        //判断type
+        selectHtml(minername);
+        //配置miner
+        $.ajax({
+            url: '../conf/miner.conf',
+            type: "GET",
+            cache: false,
+            data: '',
+            dataType: "json",
+            beforeSend:function(){
+                layer.load();
+            },
+            success:function(data){
+                loadform(data);
+                layer.closeAll('loading');
+                //自动VID提示
+                var myurl=getQueryString("action");
+                if(myurl !=null && myurl.toString().length>1 && myurl == 'submit')
+                {
+                    Config('form');
+                }
+            }
+        });
+        //加载表单
+        function loadform(data){
+            //var minertype = getMinerNameValue();
+            if(minername == 19){
+//                if(data['Pool1'] == 'none'){
+//                    $('.pool1_select').html('<select name="Pool1" class="layui-input" style="width:90%" onchange="pooltype(1);"><option>pool1</option><option>pool2</option></select>');
+//                    $('.pool2_select').html('<select name="Pool2" class="layui-input" style="width:90%" onchange="pooltype(2);"><option>pool1</option><option selected="selected">pool2</option></select>');
+//                    $('.UserName2').html('<select name="UserName2" class="layui-input" style="width:90%"><option selected="selected">worker1</option><option>worker2</option></select>');
+//                }else{
+//                    if(data['Pool1'] == 'pool1'){
+                        $('.pool1_select').html('<select name="Pool1" class="layui-input" style="width:90%" onchange="pooltype(1);"><option>pool1</option><option>pool2</option></select>');
+                        $('.pool2_select').html('<select name="Pool2" class="layui-input" style="width:90%" onchange="pooltype(2);"><option>pool1</option><option selected="selected">pool2</option></select>');
+                        $('.UserName2').html('<select name="UserName2" class="layui-input" style="width:90%"><option selected="selected">worker1</option><option>worker2</option></select>');
+//                        $('[name=UserName2]').val(data.UserName2).attr('title',data.UserName2);
+//                    }else{
+//                        $('.pool1_select').html('<select name="Pool1" class="layui-input" style="width:90%" onchange="pooltype(1);"><option>pool1</option><option selected="selected">pool2</option></select>');
+//                        $('.UserName1').html('<select name="UserName1" class="layui-input" style="width:90%"><option selected="selected">worker1</option><option>worker2</option></select>');
+//                        $('.pool2_select').html('<select name="Pool2" class="layui-input" style="width:90%" onchange="pooltype(2);"><option>pool1</option><option>pool2</option></select>');
+//                    }
+//                    if(data.UserName1 == 'worker1' || data.UserName1 == 'worker2'){
+//                        $('[name=UserName1]').val(data.UserName1).attr('title',data.UserName1);
+//                    }else{
+//                        $('input[name=UserName1]').val(data.UserName1).attr('title',data.UserName1);
+//                    }
+                    $('input[name=Password1]').val('x').attr('title','x');
+//                    if(data.UserName2 == 'worker1' || data.UserName2 == 'worker2'){
+//                        $('[name=UserName2]').val(data.UserName2).attr('title',data.UserName2);
+//                    }else{
+//                        $('[name=UserName2]').val('worker1').attr('title','worker1');
+//                    }
+                    $('[name=UserName1]').val('inno19.0001').attr('title','inno19.0001');
+                    $('input[name=Password2]').val('x').attr('title','x');
+//                }
+            }else{
+                if(data['Pool1'] != 'none'){
+                    $('[name=Pool1]').val(data.Pool1).attr('title',data.Pool1);
+                    $('[name=UserName1]').val(data.UserName1).attr('title',data.UserName1);
+                    $('input[name=Password1]').val(data.Password1).attr('title',data.Password1);
+                }
+                if(data['Pool2'] != 'none'){
+                    $('[name=Pool2]').val(data.Pool2).attr('title',data.Pool2);
+                    $('[name=UserName2]').val(data.UserName2).attr('title',data.UserName2);
+                    $('input[name=Password2]').val(data.Password2).attr('title',data.Password2);
+                }
+            }
+
+            if(data['Pool3'] != 'none'){
+                $('input[name=Pool3]').val(data.Pool3).attr('title',data.Pool3);
+                $('input[name=UserName3]').val(data.UserName3).attr('title',data.UserName3);
+                $('input[name=Password3]').val(data.Password3).attr('title',data.Password3);
+            }
+            if(data['Pool4'] != 'none'){
+                $('input[name=Pool4]').val(data.Pool4).attr('title',data.Pool4);
+                $('input[name=UserName4]').val(data.UserName4).attr('title',data.UserName4);
+                $('input[name=Password4]').val(data.Password4).attr('title',data.Password4);
+            }
+            $("[name=speed]").val(data.speed);
+            $('[name=Frequency]').val(data.Frequency).attr('title',data.Frequency);
+            $('[name=Voltage]').val(data.Voltage).attr('title',data.Voltage);
+            $("input[type='radio'][name='vidmode'][value='"+data.vidmode+"']").attr("checked", "checked");
+            if(data.vidmode == 1)
+            {
+                $("[name=Voltage]").attr("disabled","disabled").addClass('layui-disabled');
+            }
+            else
+            {
+                $("[name=Voltage]").removeAttr("disabled").removeClass('layui-disabled');
+            }
+
+            //fan setup赋值
+            $('[name=fanspeed]').val(data.fanspeed).attr('title',data.fanspeed);
+        }
+        //pool1/pool2不同
+
+        //url转json
+        function parseQueryString(url)
+        {
+            var obj={};
+            var keyvalue=[];
+            var key="",value="";
+            var paraString=url.split("&");
+            for(var i in paraString)
+            {
+                keyvalue=paraString[i].split("=");
+                key=keyvalue[0];
+                value=keyvalue[1];
+                if(value == '' && (key == 'Pool1' || key == 'UserName1' || key == 'Password1' || key == 'Frequency' || key == 'Voltage')){
+                    layer.msg(key+' is not empty');return;
+                }
+                if(/.*[\u4e00-\u9fa5]+.*$/.test(value)){
+                    layer.msg(key+' Can\'t contain Chinese');return;
+                }
+                obj[key]=value;
+            }
+//        console.log(obj);
+            return obj;
+        }
+
+        function redirect()
+        {
+            layer.closeAll('loading');
+            delcookie('login');
+            layer.msg('success', {
+                time: 2000 //2秒关闭（如果不配置，默认是3秒）
+            }, function(){
+                window.location.href='generalsettings.html'
+            });
+        }
+
+        $("input[name=vidmode]").change(function()
+        {
+            var ct = $(this).val();
+            if(ct == 1)
+            {
+                $("[name=Voltage]").attr("disabled","disabled").addClass('layui-disabled');
+            }
+            else
+            {
+                $("[name=Voltage]").removeAttr("disabled").removeClass('layui-disabled');
+            }
+        });
+
+        $(".save_fan").click(function()
+        {
+            commit_fan("fanmode=0&fanspeed="+$("[name=fanspeed]").val());
+        });
+
+        function commit_fan(post)
+        {
+            layer.load();
+            $.ajax({
+                url: '/cgi-bin/fan.py',
+                type: "POST",
+                cache: false,
+                data: post,
+                dataType: "json",
+                success:function(data){
+                    layer.closeAll('loading');
+                    if(data.result == 'true')
+                    {
+                        layer.msg('Setup successfully', {
+                            time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                        }, function(){
+                            // location.reload();
+                        });
+                    }
+                }
+            });
+        }
+    });
+    var m = 0;
+    function ConfigAjax(){
+        $.ajax({
+            type: "POST",
+            url: '/cgi-bin/check.py',
+            data: '',
+            dataType: "json",
+            success: function(json) {
+                if(json.result == 'true' && m > 0){
+                    delcookie('login');
+                    layer.msg('pool config done', {
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function(){
+                        window.location.href='../index.html?action=reboot&'+Math.random();
+                    });
+                }else{
+                    setTimeout('ConfigAjax()',1000);
+                }
+            },error:function() {
+                m++;
+                setTimeout('ConfigAjax()',3000);
+            }
+        });
+    }
+</script>
+</body>
+</html>

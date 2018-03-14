@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <link href="../static/layui/css/layui.css" rel="stylesheet" >
+    <link href="../static/css/index.css?v=1.0" rel="stylesheet" >
+    <title>Miner Console</title>
+</head>
+<body>
+<div class="header">
+     <img src="/static/logo/logo.png" class="logo p20" />
+</div>
+
+<ul class="nav fgrayh mt5 layui-clear">
+    <li><a href="/index.html">Miner Status</a></li>
+    <li><a href="/html/generalsettings.html">Miner Configuration</a></li>
+    <li class="navhover"><a href="/html/overview.html">System</a></li>
+    <li><a href="/html/settings.html">Network</a></li>
+</ul>
+<ul class="navchild nav2 layui-clear" style="display:block;">
+    <li><a href="/html/overview.html">Overview</a></li>
+    <li class="navhover"><a href="/html/administration.html">Administration</a></li>
+    <li><a href="/html/upgrade.html">Upgrade</a></li>
+    <li><a href="/html/reboot.html">Reboot</a></li>
+</ul>
+<ul class="navchild nav1 layui-clear">
+    <li><a href="/html/generalsettings.html">General Settings</a></li>
+</ul>
+<ul class="navchild nav0 layui-clear">
+    <li><a href="/index.html">Miner Status</a></li>
+</ul>
+<ul class="navchild nav3 layui-clear">
+    <li><a href="/html/settings.html">Settings</a></li>
+</ul>
+<div class="bgf5 p10">
+    <div class="title">
+        <h1 class="f18 bborder p5-y">Password</h1>
+    </div>
+    <div class="p10-y">Changes the administrator password for accessing the device</div>
+    <form onsubmit="return false;">
+        <div class="border p20 bgwhite administration">
+            <table class="contable p30-x" width="100%">
+                <tr>
+                    <td width="40%" class="text-right"><strong>Current Password</strong></td>
+                    <td width="60%">
+                        <input name="oldpwd" value="" class="layui-input" type="text" placeholder="Current Password" style="width:45%">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right"><strong>New Password</strong></td>
+                    <td>
+                        <input name="newpwd1" value="" class="layui-input" type="text" placeholder="New Password" style="width:45%">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right"><strong>Confirmation</strong></td>
+                    <td>
+                        <input name="newpwd2" value="" class="layui-input" type="text" placeholder="Confirmation" style="width:45%">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="layui-form-item p10-y">
+            <div class=" text-center">
+                <!-- <button class="layui-btn layui-btn-danger layui-btn-radius" type="reset"><i class="layui-icon">&#x1006;</i>Reset</button> -->
+				<button class="layui-btn layui-btn-radius Change">Save Password</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="../static/js/jquery.js" type="text/javascript"></script>
+<script src="../static/layui/layui.js" type="text/javascript"></script>
+<script src="../static/js/index.js?v=1.0" type="text/javascript"></script>
+<script>
+    layui.use('layer',function(){
+        var layer = layui.layer;
+    });
+    $('.Change').click(function(){
+        var oldpwd = $('input[name=oldpwd]').val();
+        var newpwd1 = $('input[name=newpwd1]').val();
+        var newpwd2 = $('input[name=newpwd2]').val();
+        if(oldpwd.length != 8){
+            layer.msg('Password length must be 8');
+        }else if(newpwd1.length != 8){
+            layer.msg('New Password length must be 8');
+        }else if(/.*[\u4e00-\u9fa5]+.*$/.test(newpwd1)){
+            layer.msg('Invalid password');
+        }else if(newpwd1 == oldpwd){
+            layer.msg('new password cannot be the same as before');
+        }else if(newpwd1 != newpwd2){
+            layer.msg('two password inconsistent');
+        }else{
+            //console.log(oldpwd+"---------"+newpwd1);
+            $.ajax({
+                type: "POST",
+                url: '../cgi-bin/pwdrst.py',
+                data: {"oldpwd":oldpwd,"newpwd":newpwd1},
+                dataType: "json",
+                beforeSend:function() {
+                    layer.load();
+                },
+                success: function(json) {
+                    layer.closeAll('loading');
+                    if(json.result == 'true'){
+                        layer.msg('change success', {
+                            time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                        }, function(){
+                            window.location.href='../index.html?'+ Math.random();
+                        });
+                    }else{
+                        layer.msg('fail');
+                    }
+                },error:function(){
+                    layer.closeAll('loading');
+                    layer.msg('error');
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>

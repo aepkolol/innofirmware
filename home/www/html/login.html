@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <link href="../static/layui/css/layui.css" rel="stylesheet" >
+    <link href="../static/css/index.css?v=1.0" rel="stylesheet" >
+    <title>Miner Console</title>
+</head>
+<body>
+<div class="header">
+    <img src="/static/logo/logo.png" class="logo p20" />
+</div>
+
+<ul class="nav fgrayh mt5 layui-clear">
+    <li><a href="/index.html">Miner Status</a></li>
+    <li class="navhover"><a href="/html/generalsettings.html">Miner Configuration</a></li>
+    <li><a href="/html/overview.html">System</a></li>
+    <li><a href="/html/settings.html">Network</a></li>
+</ul>
+<ul class="navchild nav2 layui-clear">
+    <li><a href="/html/overview.html">Overview</a></li>
+    <li><a href="/html/administration.html">Administration</a></li>
+    <li><a href="/html/upgrade.html">Upgrade</a></li>
+    <li><a href="/html/reboot.html">Reboot</a></li>
+</ul>
+<ul class="navchild nav1 layui-clear" style="display:block;">
+    <li class="navhover"><a href="/html/generalsettings.html">General Settings</a></li>
+</ul>
+<ul class="navchild nav0 layui-clear">
+    <li><a href="/index.html">Miner Status</a></li>
+</ul>
+<ul class="navchild nav3 layui-clear">
+    <li><a href="/html/settings.html">Settings</a></li>
+</ul>
+<div class="content p10" id="network_settings">
+    <div class="title">
+        <h1 class="f18 bborder p5-y" style="font-weight: bold;">Login</h1>
+    </div>
+    <form class="layui-form" action="" onsubmit="return false;">
+        <div class="dashedk">
+            <table class="contable p30-x" width="100%">
+                <tr>
+                    <td width="45%">Please Input The Password:</td>
+                    <td width="55%">
+                        <input  placeholder="Password" class="layui-input" style="width:45%" type="password" name="password">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="padding-top:15px;" align="right">
+            <button class="layui-btn layui-btn-radius login"><i class="layui-icon">&#xe605;</i>Login</button>
+        </div>
+    </form>
+</div>
+<script src="../static/js/jquery.js" type="text/javascript"></script>
+<script src="../static/layui/layui.js" type="text/javascript"></script>
+<script src="../static/js/index.js?v=1.0" type="text/javascript"></script>
+<script>
+    layui.use('layer',function()
+    {
+        var layer = layui.layer;
+    });
+    //登录
+    $('.login').click(function()
+    {
+        var password = $('input[name=password]').val();
+        if(password.length != 8)
+        {
+            layer.msg('password wrong');
+        }
+        else
+        {
+            login(password);
+        }
+    });
+
+    function login(password)
+    {
+        var password = $('input[name=password]').val();
+        if(password.length != 8)
+        {
+            layer.msg('password wrong');
+        }
+        else
+        {
+            $.ajax({
+                type: "POST",
+                url: '../cgi-bin/login.py',
+                data: {"password":password},
+                dataType: "json",
+                beforeSend:function(json)
+                {
+                    layer.load();
+                },
+                success: function(json)
+                {
+                    layer.closeAll('loading');
+                    if(json.result == 'true')
+                    {
+                        setcookie('login',true);
+                        layer.msg('login success',
+                                {
+                                    time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                                }, function()
+                                {
+                                    window.location.href='generalsetup.html?'+ Math.random();
+                                });
+                    }
+                    else
+                    {
+                        layer.msg('password wrong');
+                    }
+                },
+                error:function()
+                {
+                    layer.closeAll('loading');
+                    layer.msg('error');
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>

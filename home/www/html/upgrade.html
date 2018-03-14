@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <link href="../static/layui/css/layui.css" rel="stylesheet" >
+    <link href="../static/css/index.css?v=1.0" rel="stylesheet" >
+    <title>Miner Console</title>
+</head>
+<body>
+<div class="header">
+    <img src="/static/logo/logo.png" class="logo p20" />
+</div>
+
+<ul class="nav fgrayh mt5 layui-clear">
+    <li><a href="/index.html">Miner Status</a></li>
+    <li><a href="/html/generalsettings.html">Miner Configuration</a></li>
+    <li class="navhover"><a href="/html/overview.html">System</a></li>
+    <li><a href="/html/settings.html">Network</a></li>
+</ul>
+<ul class="navchild nav2 layui-clear" style="display:block;">
+    <li><a href="/html/overview.html">Overview</a></li>
+    <li><a href="/html/administration.html">Administration</a></li>
+    <li class="navhover"><a href="/html/upgrade.html">Upgrade</a></li>
+    <li><a href="/html/reboot.html">Reboot</a></li>
+</ul>
+<ul class="navchild nav1 layui-clear">
+    <li><a href="/html/generalsettings.html">General Settings</a></li>
+</ul>
+<ul class="navchild nav0 layui-clear">
+    <li><a href="/index.html">Miner Status</a></li>
+</ul>
+<ul class="navchild nav3 layui-clear">
+    <li><a href="/html/settings.html">Settings</a></li>
+</ul>
+<div class="bgf5 p10">
+    <div class="title">
+        <h1 class="f18 bborder p5-y">Upgrade<span style="font-size:12px;">&nbsp;&nbsp;&nbsp;(Chrome Browser is preferred)</span></h1>
+    </div>
+    <div class="dashedk">
+        <h3 class="panel-title p5 dtitle f16"><strong>Upgrade the latest firmware image (recommended)</strong></h3>
+        <div class="p5-y fblack"><p> Note that update.bin file should be obtained from the support center of internet to replace the running firmware,check "Keep user settings" button to retain user current account configurations.</p>
+            <p><strong>Approach 1</strong> (recommended): Use internet to download the update.bin file, complete the firmware upgade then recycle the power, please follow intruction manual.</p>
+            <p><strong>Approach 2</strong> (just in case Method 1 does not work):Make a 16G SD card image based on instruction manual. Please contact support personnel for this method.</p>
+        </div>
+        <p class="fred p5-y"><strong>Please DO NOT power off during upgrade,Use ctrl+F5 to refresh. After the upgrade 100% completion, system should automatically reboot, if not, please manually reboot the miner.</strong></p>
+        <div class="border border-ra5">
+            <div class="layui-row p5">
+                <div class="layui-progress-k none" style="margin-top:10px;">
+		    <div class="layui-progress">
+                        <div class="layui-progress-bar" style="width: 0%;"><span class="layui-progress-text">0%</span></div>
+                    </div>
+                    <div class="text-center text"></div>
+                </div>
+                <br/>
+                <div class="imgupload layui-clear">
+                    <div class="imgupload01 fl text-right p5"></div>
+                    <div class="imgupload02 fl p5">
+                        <input name="keepsettings" value="1" type="radio" checked="checked" /><label style="padding-right: 15px;"> Keep User Settings</label>
+                        <input name="keepsettings" value="0" type="radio" /> Return To Factory Default Settings
+                    </div>
+                </div>
+                <div class="imgupload layui-clear">
+                    <div class="imgupload01 fl text-right p5"><strong>Image:</strong></div>
+                    <div class="imgupload02 fl">
+                        <div class="fl col col1"><button type="button" class="layui-btn layui-btn-small" style="background-color: #908f8f;" id="file">Choose file</button></div>
+                        <div class="fl col col2"><input type="file" name="file" style="display: none;" onchange="handleFile(this)" /><input type="text" name="fileName" class="form-control w180" /></div>
+                        <div class="fl col col3">
+                            <div class="layui-btn Update layui-btn-small" onclick="Update();"><i class="layui-icon"></i>Apply</div>
+                        </div>
+                    </div>
+                    <p class="layui-clear text-center">Please download the update.bin file from the URL in the instruction manual and apply it here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="showbg bgblack none"></div>
+<script src="../static/js/jquery.js" type="text/javascript"></script>
+<script src="../static/layui/layui.js" type="text/javascript"></script>
+<script src="../static/js/index.js?v=1.0" type="text/javascript"></script>
+<script>
+    layui.use('layer',function(){
+        var layer = layui.layer;
+    });
+    //点击更新
+    var tourl = 'http://192.168.1.254';
+    function Update(){
+        var file = $('input[name=file]').get(0).files[0];
+        if(!file){
+            layer.msg('no file');return;
+        }
+        else if((file.size / Math.pow(1024,2)).toFixed(2) > 100)
+        {
+            layer.msg('file-size limited');return;
+        }
+        
+        var keepsettingsVal = $('input[type="radio"][name="keepsettings"]:checked').val();
+        if(keepsettingsVal == 1){
+            tourl = '';
+        }
+//        console.log(keepsettingsVal);
+        var fd = new FormData();
+        fd.append("keepsettings", keepsettingsVal);
+        fd.append("upfile", file);
+//        console.log(fd);
+        $.ajax({
+            url: "../cgi-bin/upload.py",
+            type: "POST",
+            processData: false,
+            contentType: false,
+            data: fd,
+            dataType: 'json',
+            success: function(json) {
+            },error: function(json) {
+                setTimeout('show(tourl)',1000);
+            }
+        });
+        $('.Update').attr('onclick','');
+        $('.Update').addClass('layui-disabled');
+        $('.layui-progress-k,.showbg').show();
+        setTimeout('show("")',1000);
+    }
+    //进度条
+    function progress(json){
+        $('.layui-progress-bar').css('width',json.percent+'%');
+        $('.layui-progress-text').text(json.percent+'%');
+        $('.layui-progress-k .text').text(json.text);
+    }
+    var m= 0,percent=0;
+    function show(ip){//跨域判断
+        var url = ip+'/cgi-bin/show.py';
+        var xhr = $.ajax({
+            type: "GET",
+            url: url,
+            data: '',
+            dataType: "jsonp",
+            success:function(json) {
+                if(percent > json.percent && json.percent == 0){
+                    clearTimeout(timer);
+                    json.text = 'rebooting...';
+                    json.percent = 100;
+                    progress(json);
+                    //判断Keep settings
+                    var Val = $('input[type="radio"][name="keepsettings"]:checked').val();
+                    if(Val == 1){
+                        ip = '';
+                    }else{
+                        ip = tourl;
+                    }
+
+                    layer.msg('success', {
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    },function(){
+                        window.location.href=ip+'/index.html?action=reboot&'+ Math.random();
+                    });
+                    return;
+                }else{
+                    percent = json.percent;
+                    if(json.percent < 10){
+                        m++;
+                        json.percent = m;
+					}
+                }
+                progress(json);
+                var timer = setTimeout(show(ip),1000);
+            }
+        });
+        jsonp(xhr,ip);
+    }
+
+    function jsonp(xhr,ip) {
+        // request failed
+        xhr.fail(function(jqXHR, textStatus, ex) {
+            setTimeout(show(ip),1000);
+        });
+
+        // ie 8+, chrome and some other browsers
+        var head = document.head || $('head')[0] || document.documentElement; // code from jquery
+        var script = $(head).find('script')[0];
+        script.onerror = function(evt) {
+            setTimeout(show(ip),1000);
+            // do some clean
+
+            // delete script node
+            if (script.parentNode) {
+                script.parentNode.removeChild(script);
+            }
+            // delete callback global function
+            var src = script.src || '';
+            var idx = src.indexOf('callback=');
+            if (idx != -1) {
+                var idx2 = src.indexOf('&');
+                if (idx2 == -1) {
+                    idx2 = src.length;
+                }
+                var callback = src.substring(idx + 13, idx2);
+                delete window[callback];
+            }
+        };
+    }
+</script>
+</body>
+</html>
