@@ -1,0 +1,20 @@
+#!/bin/sh
+
+mount / -o rw,remount
+
+a=`ps | grep -rn MServer.py | grep -v grep | awk '{print $2}'`
+kill $a
+b=`ps | grep -rn innominer_T | grep -v grep | awk '{print $2}'`
+kill $b
+
+sleep 2s
+
+type=`cat /tmp/type`
+path=/bin/innominer_$type
+cp -avf /tmp/patch.data $path
+chmod 777 $path
+
+sleep 2s
+
+mount / -o ro,remount
+

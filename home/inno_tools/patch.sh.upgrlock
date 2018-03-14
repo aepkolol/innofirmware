@@ -1,0 +1,4 @@
+#!/bin/sh
+
+fw_setenv upgr_lock 1
+
