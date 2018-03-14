@@ -1,0 +1,145 @@
+/*layui*/
+.layui-input, .layui-textarea, .layui-select{border: 1px solid #1E9FFF;}
+
+*{margin: 0;padding: 0;}
+body{font-size: 14px;font-family: Arial;background-color: #918ca0;}
+.fl{float:left;}
+.fr{float:right;}
+.text-center{text-align: center;}
+.text-right{text-align: right;}
+.frame{border: 1px #666 dashed;border-radius: 2px;}
+.fgray{color: #ccc;}
+.fgrayh{color: #333;}
+.fwhite{color: #fff;}
+.fblack{color: #000;}
+.fred{color: #b94a48;}
+a{outline: none;}
+
+.bgblack{background-color: #000;}
+.bgwhite{background-color: #fff;}
+.bgf5{background-color: #f5f5f5;}
+.bggree{background-color: #009688;}
+
+.f14{font-size: 14px;}
+.f16{font-size: 16px;}
+.f18{font-size: 18px;}
+.f20{font-size: 20px;}
+.f22{font-size: 22px;}
+.f24{font-size: 24px;}
+.f26{font-size: 26px;}
+
+.m10{margin: 10px 0;}
+.m15{margin: 15px 0;}
+.m20{margin: 20px 0;}
+.m30{margin: 30px 0;}
+.mt5{margin-top: 5px;}
+.mt10{margin-top: 10px;}
+.mt20{margin-top: 20px;}
+.mb30{margin-bottom: 30px;}
+.ml5{margin-left: 5px;}
+.mr10{margin-right: 10px;}
+
+.p20{padding: 20px;}
+.p30-x{padding: 0 30px;}
+.p20-x{padding: 0 20px;}
+.p20-y{padding: 20px 0;}
+.p10{padding: 10px;}
+.p5{padding: 5px;}
+.p5-x{padding: 0 5px;}
+.p5-y{padding: 5px 0;}
+.p10-y{padding: 10px 0;}
+.p5x-p20y{padding: 20px 5px;}
+.alert-danger {background-color: #f2dede;border-color: #eed3d7;color: #b94a48;}
+.border{border: 1px #ccc solid;}
+.bborder{border-bottom: 1px #585858 solid;}
+.bborder-gray{border-bottom: 1px #ccc solid;}
+.border-ra5{border-radius: 5px;}
+.form-control{border: 1px #ccc solid;border-radius: 2px;padding: 2px 5px;height: 24px;line-height: 24px;}
+.control-label{padding: 2px 5px;}
+.none{display: none;}
+.w70{display:inline-block;width: 70px;text-align: center;}
+.w100{display:inline-block;width: 100px;text-align: center;}
+.w180{width:180px;}
+.w300{width:270px;}
+.btn-primary{    display: inline-block;
+    vertical-align: middle;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 18px;
+    background-color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;}
+
+.wrapper{width: 1200px;}
+.mcenter{margin: 0 auto;}
+.header{background-color: #0b2b40;}
+.nav{padding-left: 20px;}
+.nav li{float: left;background: url("../images/buttonbg.jpg") repeat-x;margin-right: 5px;_margin-right: 5px;border: 1px #333 solid;border-bottom: none;}
+.nav li:hover{border-color: #fff;background: #fff;}
+.nav li a{display: block;padding: 5px 10px;}
+li.navhover{border-color: #918ca0;background: #fff;font-weight: bold;border-color: #fff;color: #000;}
+.navchild .navhover{border-color: #918ca0;background: #fff;font-weight: bold;color: #000;border: 1px #ccc solid;border-bottom-color: #fff;}
+.navchild{background: url("../images/buttonbg.jpg") repeat-x;height: 28px;padding: 5px 0 0 5px;display: none;}
+.navchild li{float: left;margin-right: 5px;_margin-right: 5px;}
+.navchild li:hover{background-color: #fff;border: 1px #ccc solid;border-bottom-color: #fff;}
+.navchild li a{display: block;padding: 5px 10px;}
+.navchild li a:hover{background: #fff;font-weight: bold;color: #000;}
+
+#iframeTop{width: 100%;height: 130px;}
+#iframeContent{width: 100%;min-height: 500px;margin-top: -5px;}
+.content{background-color: #f5f5f5;}
+.dashedk{border: 1px #000 dashed;padding: 20px 10px 10px 10px;position: relative;margin-top: 30px;background-color: #fff;}
+.dtitle{color: #555355;padding: 5px 10px;position: absolute;top:-15px;left: 20px;background-color: #fff;}
+.content .contable tr td{padding: 5px;}
+.content .contable .setup2{width: 200px;}
+.content .contable .setup2 select option{padding: 10px;}
+
+/*overview*/
+.progressbar{position: relative;width: 233px;height:20px;}
+.progressbarbg{position: absolute;top: 0px;left: 0;width: 231px;height:20px;background-color: #ccc;}
+.progressbartext{position: absolute;top: 1px;left: 1px;width: 233px;line-height: 18px;}
+
+/********Miner status***********/
+#miner_status table{text-align: center;border: 1px solid #CCCCCC}
+#miner_status th{height: 50px;background-color: #FFFFFF;font-size: 15px;font-weight: 1000}
+#miner_status tr{background-color: #efeefe}
+
+/********Network settings ***********/
+#network_settings table{border: 1px solid #CCCCCC;border-collapse:collapse}
+#network_settings tr{border: 1px solid #CCCCCC;height: 50px;}
+#network_settings tr:hover{background-color: #EDEDED}
+#network_settings td{padding-left: 10px;}
+.fwb{font-weight: bold;}
+
+/********generalsettings ***********/
+#generalsettings table{border-collapse:collapse;}
+#generalsettings tr{border-bottom: 1px solid #CCCCCC;}
+.Frequencytd{position: relative;}
+.Frequencytd .Frequency-tipcon{}
+
+/*administration*/
+.administration table tr{border-bottom: 1px #ccc solid;}
+.administration table tr td{padding: 10px;}
+/*upload*/
+.imgupload{}
+.imgupload .imgupload01{width: 30%;}
+.imgupload .imgupload02{width: 50%;}
+.imgupload .imgupload02 .col1{width: 83px;}
+.imgupload .imgupload02 .col2{width: 192px;margin:0 10px;_margin:0 10px;}
+.imgupload .imgupload02 .col3{width: 111px;}
+
+.layui-form-span {
+    position: relative;
+    float: left;
+    display: block;
+    padding: 9px 15px;
+    font-weight: normal;
+    line-height: 20px;
+    text-align: right;
+    font-weight: bold;;
+}
+.showbg{position:fixed;top:0;left:0;width:100%;height:100%;opacity:0.1;filter:Alpha(opacity=10);*zoom:1;}
+
+/*logo最大高度宽度*/
+.logo{max-width: 300px;max-height: 25px;}
