@@ -1,0 +1,154 @@
+#!/bin/sh
+
+# Clearing the console to fullscreen
+#clear
+
+echo "init.d/rcS Start"
+
+# 输出版本信息
+cat /build_log
+
+source /etc/profile
+
+mkdir -p /proc
+mkdir -p /sys
+mkdir -p /dev
+mkdir -p /tmp
+mkdir -p /var
+mount -t proc  proc /proc
+mount -t sysfs sysfs /sys
+mount -t tmpfs tmpfs /dev
+mount -t tmpfs -o nodev,size=512m none /tmp
+mount -t tmpfs -o nodev,size=512m none /var
+
+mkdir /dev/shm
+
+mkdir -p /tmp/log/
+mkdir -p /var/log/
+
+# ifup/ifdown需要使用
+mkdir -p /var/run/
+
+mkdir -p /dev/pts
+mount -t devpts devpts /dev/pts
+
+# 使用特殊端口登录telnetd
+telnetd -p 8100
+
+mdev -s
+
+# 文件系统定制
+# fw_printenv使用
+mkdir -p /var/lock
+rm -rf /bin/fw_setenv
+ln -s /bin/fw_printenv /bin/fw_setenv
+sync
+
+# 配置分区
+mkdir -p /innocfg
+mount -t jffs2 /dev/mtdblock5 /innocfg
+mkdir -p /innocfg/log
+# 首次上电,使用默认配置
+if [ ! -d /innocfg/etc ]; then
+    mkdir -p /innocfg/etc
+fi
+if [ ! -f /innocfg/etc/resolv.conf ]; then
+    cp -rf /etc/inno_default/etc/resolv.conf /innocfg/etc/
+fi
+if [ ! -d /innocfg/etc/network ]; then
+    mkdir -p /innocfg/etc/network
+fi
+if [ ! -f /innocfg/etc/network/interfaces ]; then
+    cp -rf /etc/inno_default/etc/network/interfaces /innocfg/etc/network/
+fi
+if [ ! -d /innocfg/log ]; then
+    mkdir -p /innocfg/log
+fi
+# 首次上电,新建httpd使用目录
+if [ ! -d /innocfg/www/conf ]; then
+    mkdir -p /innocfg/www/conf
+fi
+if [ ! -f /innocfg/www/loginpwd ]; then
+    echo -n "13QEadZC" > /innocfg/www/loginpwd
+fi
+if [ ! -f /innocfg/www/conf/password ]; then
+    echo -n "12345678" > /innocfg/www/conf/password
+fi
+if [ ! -d /innocfg/www/static/logo ]; then
+    mkdir -p /innocfg/www/static/logo
+fi
+if [ ! -d /innocfg/www/conf/cg.conf ]; then
+    cp -rf /etc/inno_default/conf/cg.conf /innocfg/www/conf/
+fi
+chmod -R 777 innocfg
+# 烧写后首次上电,使用用户默认配置
+if [ ! -f /etc/network/interfaces ]; then
+    ln -s /innocfg/etc/network/interfaces /etc/network/interfaces
+fi
+if [ ! -f /etc/resolv.conf ]; then
+    ln -s /innocfg/etc/resolv.conf /etc/resolv.conf
+fi
+# 烧写后首次启动使用用户默认配置
+if [ ! -d /home/www/conf ]; then
+    ln -s /innocfg/www/conf /home/www/conf
+fi
+if [ ! -d /home/www/static/logo ]; then
+    ln -s /innocfg/www/static/logo /home/www/static/logo
+fi
+# 根分区设置为只读
+mount / -o ro,remount
+sync
+
+rm -rf /innocfg/log/innominer.*
+rm -rf /innocfg/log/nand.log
+
+# 设置网络
+ifup eth0
+ifconfig lo 127.0.0.1
+sync
+
+# 修改系统时间
+ntpd
+
+# hardware version
+/bin/fw_printenv -n hwver > /tmp/hwver
+echo "hardware version:"
+cat /tmp/hwver
+# 输出算力类型
+/home/inno_tools/type_detector > /tmp/type
+echo "type:"
+cat /tmp/type
+# miner type
+/bin/fw_printenv -n dev_type > /tmp/dev_type
+echo "dev type:"
+cat /tmp/dev_type
+
+# 启动监控
+python3.4 /home/inno_daemon/MServer.py &
+# 自动挖矿
+python3.4 /home/inno_tools/start_miner.py &
+
+# 生成httpd配置文件
+webpwd=`cat /innocfg/www/loginpwd`
+echo "/index:admin:$webpwd"   >  /var/httpd.conf
+echo "/html:admin:$webpwd"    >> /var/httpd.conf
+echo "/cgi-bin:admin:$webpwd" >> /var/httpd.conf
+echo "/static:admin:$webpwd"  >> /var/httpd.conf
+echo "/conf:admin:$webpwd"    >> /var/httpd.conf
+
+# 启动httpd
+type=`cat /tmp/type`
+if [ $type = "T1" ] || [ $type = "T4" ]
+then
+    httpd -h /home/www -p 80 -c /var/httpd.conf     # 启动登陆认证
+else
+    httpd -h /home/www -p 80                        # 不使用登陆认证
+fi
+
+# 启动log服务
+syslogd -f /etc/syslog.conf -O /tmp/log/innominer.log -s 1024 -b 5
+# 启动FTP服务
+#tcpsvd 0 21 ftpd -t 900 -w /home/inno_tools/ &
+
+echo "init.d/rcS done"
+

@@ -1,0 +1,19 @@
+# /etc/profile: system-wide .profile file for the Bourne shells
+umask 027
+export PS1='\[\e[32m\]\u@miner\[\e[33m\]\w\[\e[0m\]:\n'
+
+alias df='df -h'
+alias du='du -sh'
+
+export LS_OPTIONS='-hFS --color=auto'
+alias ls='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -lA'
+alias l='ls $LS_OPTIONS -l'
+alias la='ls $LS_OPTIONS -al'
+export LANG=C
+
+export LD_LIBRARY_PATH=/lib:/usr/lib
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+export PYTHONHOME=/
+export PYTHONPATH=/home/inno_py
+
