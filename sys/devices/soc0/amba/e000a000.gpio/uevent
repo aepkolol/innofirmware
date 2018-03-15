@@ -1,0 +1,6 @@
+DRIVER=zynq-gpio
+OF_NAME=gpio
+OF_FULLNAME=/amba/gpio@e000a000
+OF_COMPATIBLE_0=xlnx,zynq-gpio-1.0
+OF_COMPATIBLE_N=1
+MODALIAS=of:NgpioT<NULL>Cxlnx,zynq-gpio-1.0

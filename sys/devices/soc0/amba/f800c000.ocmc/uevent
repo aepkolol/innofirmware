@@ -1,0 +1,6 @@
+DRIVER=zynq-ocm
+OF_NAME=ocmc
+OF_FULLNAME=/amba/ocmc@f800c000
+OF_COMPATIBLE_0=xlnx,zynq-ocmc-1.0
+OF_COMPATIBLE_N=1
+MODALIAS=of:NocmcT<NULL>Cxlnx,zynq-ocmc-1.0

@@ -1,0 +1,7 @@
+OF_NAME=slcr
+OF_FULLNAME=/amba/slcr@f8000000
+OF_COMPATIBLE_0=xlnx,zynq-slcr
+OF_COMPATIBLE_1=syscon
+OF_COMPATIBLE_2=simple-bus
+OF_COMPATIBLE_N=3
+MODALIAS=of:NslcrT<NULL>Cxlnx,zynq-slcrCsysconCsimple-bus

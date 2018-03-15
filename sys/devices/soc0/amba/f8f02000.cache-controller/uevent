@@ -1,0 +1,5 @@
+OF_NAME=cache-controller
+OF_FULLNAME=/amba/cache-controller@f8f02000
+OF_COMPATIBLE_0=arm,pl310-cache
+OF_COMPATIBLE_N=1
+MODALIAS=of:Ncache-controllerT<NULL>Carm,pl310-cache

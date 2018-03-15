@@ -1,0 +1,5 @@
+OF_NAME=axi_quad_spi
+OF_FULLNAME=/amba_pl/axi_quad_spi@41e00000
+OF_COMPATIBLE_0=xlnx,xps-spi-2.00.a
+OF_COMPATIBLE_N=1
+OF_ALIAS_0=spi0

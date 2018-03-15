@@ -1,0 +1,6 @@
+DRIVER=cdns-wdt
+OF_NAME=watchdog
+OF_FULLNAME=/amba/watchdog@f8005000
+OF_COMPATIBLE_0=cdns,wdt-r1p2
+OF_COMPATIBLE_N=1
+MODALIAS=of:NwatchdogT<NULL>Ccdns,wdt-r1p2

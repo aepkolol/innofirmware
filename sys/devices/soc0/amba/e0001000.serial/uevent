@@ -1,0 +1,9 @@
+DRIVER=xuartps
+OF_NAME=serial
+OF_FULLNAME=/amba/serial@e0001000
+OF_TYPE=serial
+OF_COMPATIBLE_0=xlnx,xuartps
+OF_COMPATIBLE_1=cdns,uart-r1p8
+OF_COMPATIBLE_N=2
+OF_ALIAS_0=serial0
+MODALIAS=of:NserialTserialCxlnx,xuartpsCcdns,uart-r1p8

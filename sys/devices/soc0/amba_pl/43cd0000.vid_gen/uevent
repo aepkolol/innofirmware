@@ -1,0 +1,5 @@
+OF_NAME=vid_gen
+OF_FULLNAME=/amba_pl/vid_gen@43cd0000
+OF_COMPATIBLE_0=xlnx,vid-gen-1.0
+OF_COMPATIBLE_N=1
+MODALIAS=of:Nvid_genT<NULL>Cxlnx,vid-gen-1.0

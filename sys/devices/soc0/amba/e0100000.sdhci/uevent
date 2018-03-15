@@ -1,0 +1,6 @@
+DRIVER=sdhci-arasan
+OF_NAME=sdhci
+OF_FULLNAME=/amba/sdhci@e0100000
+OF_COMPATIBLE_0=arasan,sdhci-8.9a
+OF_COMPATIBLE_N=1
+MODALIAS=of:NsdhciT<NULL>Carasan,sdhci-8.9a

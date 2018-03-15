@@ -1,0 +1,8 @@
+DRIVER=macb
+OF_NAME=ethernet
+OF_FULLNAME=/amba/ethernet@e000b000
+OF_COMPATIBLE_0=cdns,zynq-gem
+OF_COMPATIBLE_1=cdns,gem
+OF_COMPATIBLE_N=2
+OF_ALIAS_0=ethernet0
+MODALIAS=of:NethernetT<NULL>Ccdns,zynq-gemCcdns,gem

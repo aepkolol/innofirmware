@@ -1,0 +1,5 @@
+OF_NAME=clkc
+OF_FULLNAME=/amba/slcr@f8000000/clkc@100
+OF_COMPATIBLE_0=xlnx,ps7-clkc
+OF_COMPATIBLE_N=1
+MODALIAS=of:NclkcT<NULL>Cxlnx,ps7-clkc

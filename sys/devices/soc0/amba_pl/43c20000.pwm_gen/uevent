@@ -1,0 +1,5 @@
+OF_NAME=pwm_gen
+OF_FULLNAME=/amba_pl/pwm_gen@43c20000
+OF_COMPATIBLE_0=xlnx,pwm-gen-1.0
+OF_COMPATIBLE_N=1
+MODALIAS=of:Npwm_genT<NULL>Cxlnx,pwm-gen-1.0

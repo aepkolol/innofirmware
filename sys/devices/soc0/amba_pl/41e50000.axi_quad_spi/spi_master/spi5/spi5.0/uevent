@@ -1,0 +1,6 @@
+DRIVER=spidev
+OF_NAME=spidev
+OF_FULLNAME=/amba_pl/axi_quad_spi@41e50000/spidev@0
+OF_COMPATIBLE_0=rohm,dh2228fv
+OF_COMPATIBLE_N=1
+MODALIAS=spi:dh2228fv

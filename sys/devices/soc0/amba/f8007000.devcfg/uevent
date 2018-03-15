@@ -1,0 +1,6 @@
+DRIVER=xdevcfg
+OF_NAME=devcfg
+OF_FULLNAME=/amba/devcfg@f8007000
+OF_COMPATIBLE_0=xlnx,zynq-devcfg-1.0
+OF_COMPATIBLE_N=1
+MODALIAS=of:NdevcfgT<NULL>Cxlnx,zynq-devcfg-1.0

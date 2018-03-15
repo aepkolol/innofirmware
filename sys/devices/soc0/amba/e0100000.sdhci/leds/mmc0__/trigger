@@ -1,0 +1,1 @@
+none kbd-scrollock kbd-numlock kbd-capslock kbd-kanalock kbd-shiftlock kbd-altgrlock kbd-ctrllock kbd-altlock kbd-shiftllock kbd-shiftrlock kbd-ctrlllock kbd-ctrlrlock nand-disk [mmc0] timer oneshot heartbeat backlight gpio cpu0 cpu1 default-on transient flash torch 

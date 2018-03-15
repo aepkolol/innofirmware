@@ -1,0 +1,6 @@
+DRIVER=xilinx-gpio
+OF_NAME=gpio
+OF_FULLNAME=/amba_pl/gpio@41200000
+OF_COMPATIBLE_0=xlnx,xps-gpio-1.00.a
+OF_COMPATIBLE_N=1
+MODALIAS=of:NgpioT<NULL>Cxlnx,xps-gpio-1.00.a

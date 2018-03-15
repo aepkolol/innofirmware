@@ -1,0 +1,2 @@
+DRIVER=snd-soc-dummy
+MODALIAS=platform:snd-soc-dummy

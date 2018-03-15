@@ -1,0 +1,6 @@
+DRIVER=xadc
+OF_NAME=adc
+OF_FULLNAME=/amba/adc@f8007100
+OF_COMPATIBLE_0=xlnx,zynq-xadc-1.00.a
+OF_COMPATIBLE_N=1
+MODALIAS=of:NadcT<NULL>Cxlnx,zynq-xadc-1.00.a

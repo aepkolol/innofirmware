@@ -1,0 +1,5 @@
+OF_NAME=read_dna
+OF_FULLNAME=/amba_pl/read_dna@43c40000
+OF_COMPATIBLE_0=xlnx,read-dna-1.0
+OF_COMPATIBLE_N=1
+MODALIAS=of:Nread_dnaT<NULL>Cxlnx,read-dna-1.0

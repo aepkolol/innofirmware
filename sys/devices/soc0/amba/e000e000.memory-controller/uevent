@@ -1,0 +1,6 @@
+DRIVER=pl35x-smc
+OF_NAME=memory-controller
+OF_FULLNAME=/amba/memory-controller@e000e000
+OF_COMPATIBLE_0=arm,pl353-smc-r2p1
+OF_COMPATIBLE_N=1
+MODALIAS=of:Nmemory-controllerT<NULL>Carm,pl353-smc-r2p1

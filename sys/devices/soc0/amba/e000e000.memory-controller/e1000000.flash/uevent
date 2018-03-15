@@ -1,0 +1,6 @@
+DRIVER=pl35x-nand
+OF_NAME=flash
+OF_FULLNAME=/amba/memory-controller@e000e000/flash@e1000000
+OF_COMPATIBLE_0=arm,pl353-nand-r2p1
+OF_COMPATIBLE_N=1
+MODALIAS=of:NflashT<NULL>Carm,pl353-nand-r2p1

@@ -1,0 +1,6 @@
+DRIVER=zynq-pinctrl
+OF_NAME=pinctrl
+OF_FULLNAME=/amba/slcr@f8000000/pinctrl@700
+OF_COMPATIBLE_0=xlnx,pinctrl-zynq
+OF_COMPATIBLE_N=1
+MODALIAS=of:NpinctrlT<NULL>Cxlnx,pinctrl-zynq

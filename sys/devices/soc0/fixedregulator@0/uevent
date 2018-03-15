@@ -1,0 +1,6 @@
+DRIVER=reg-fixed-voltage
+OF_NAME=fixedregulator
+OF_FULLNAME=/fixedregulator@0
+OF_COMPATIBLE_0=regulator-fixed
+OF_COMPATIBLE_N=1
+MODALIAS=of:NfixedregulatorT<NULL>Cregulator-fixed

@@ -1,0 +1,5 @@
+OF_NAME=timer
+OF_FULLNAME=/amba/timer@f8001000
+OF_COMPATIBLE_0=cdns,ttc
+OF_COMPATIBLE_N=1
+MODALIAS=of:NtimerT<NULL>Ccdns,ttc

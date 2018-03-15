@@ -1,0 +1,5 @@
+OF_NAME=rstc
+OF_FULLNAME=/amba/slcr@f8000000/rstc@200
+OF_COMPATIBLE_0=xlnx,zynq-reset
+OF_COMPATIBLE_N=1
+MODALIAS=of:NrstcT<NULL>Cxlnx,zynq-reset

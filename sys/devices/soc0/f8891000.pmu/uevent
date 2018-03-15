@@ -1,0 +1,6 @@
+DRIVER=armv7-pmu
+OF_NAME=pmu
+OF_FULLNAME=/pmu
+OF_COMPATIBLE_0=arm,cortex-a9-pmu
+OF_COMPATIBLE_N=1
+MODALIAS=of:NpmuT<NULL>Carm,cortex-a9-pmu
