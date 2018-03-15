@@ -1,0 +1,9 @@
+/dev/root / jffs2 ro,relatime 0 0
+devtmpfs /dev devtmpfs rw,relatime,size=117832k,nr_inodes=29458,mode=755 0 0
+proc /proc proc rw,relatime 0 0
+sysfs /sys sysfs rw,relatime 0 0
+tmpfs /dev tmpfs rw,relatime 0 0
+none /tmp tmpfs rw,nodev,relatime,size=524288k 0 0
+none /var tmpfs rw,nodev,relatime,size=524288k 0 0
+devpts /dev/pts devpts rw,relatime,mode=600 0 0
+/dev/mtdblock5 /innocfg jffs2 rw,relatime 0 0

@@ -1,0 +1,69 @@
+name         : crc32c
+driver       : crc32c-generic
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : shash
+blocksize    : 1
+digestsize   : 4
+
+name         : aes
+driver       : aes-generic
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : digest_null
+driver       : digest_null-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : shash
+blocksize    : 1
+digestsize   : 0
+
+name         : compress_null
+driver       : compress_null-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : compression
+
+name         : ecb(cipher_null)
+driver       : ecb-cipher_null
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : blkcipher
+blocksize    : 1
+min keysize  : 0
+max keysize  : 0
+ivsize       : 0
+geniv        : <default>
+
+name         : cipher_null
+driver       : cipher_null-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : cipher
+blocksize    : 1
+min keysize  : 0
+max keysize  : 0
+

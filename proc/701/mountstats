@@ -1,0 +1,9 @@
+device /dev/root mounted on / with fstype jffs2
+device devtmpfs mounted on /dev with fstype devtmpfs
+device proc mounted on /proc with fstype proc
+device sysfs mounted on /sys with fstype sysfs
+device tmpfs mounted on /dev with fstype tmpfs
+device none mounted on /tmp with fstype tmpfs
+device none mounted on /var with fstype tmpfs
+device devpts mounted on /dev/pts with fstype devpts
+device /dev/mtdblock5 mounted on /innocfg with fstype jffs2

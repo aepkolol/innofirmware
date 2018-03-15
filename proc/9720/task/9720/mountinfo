@@ -1,0 +1,9 @@
+12 0 31:4 / / ro,relatime - jffs2 /dev/root ro
+13 12 0:6 / /dev rw,relatime - devtmpfs devtmpfs rw,size=117832k,nr_inodes=29458,mode=755
+14 12 0:4 / /proc rw,relatime - proc proc rw
+15 12 0:12 / /sys rw,relatime - sysfs sysfs rw
+16 13 0:13 / /dev rw,relatime - tmpfs tmpfs rw
+17 12 0:14 / /tmp rw,nodev,relatime - tmpfs none rw,size=524288k
+18 12 0:15 / /var rw,nodev,relatime - tmpfs none rw,size=524288k
+19 16 0:11 / /dev/pts rw,relatime - devpts devpts rw,mode=600
+20 12 31:5 / /innocfg rw,relatime - jffs2 /dev/mtdblock5 rw

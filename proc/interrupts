@@ -1,0 +1,28 @@
+           CPU0       CPU1       
+ 16:          0          0       GIC  27 Edge      gt
+ 17:          0          0       GIC  43 Level     ttc_clockevent
+ 18:    6428337    6429098       GIC  29 Edge      twd
+ 21:         53          0       GIC  39 Level     f8007100.adc
+142:          0          0       GIC  35 Level     f800c000.ocmc
+143:         53          0       GIC  82 Level     xuartps
+145:     863048          0       GIC  54 Level     eth0
+146:          0          0       GIC  56 Level     mmc0
+147:          0          0       GIC  45 Level     f8003000.dmac
+148:          0          0       GIC  46 Level     f8003000.dmac
+149:          0          0       GIC  47 Level     f8003000.dmac
+150:          0          0       GIC  48 Level     f8003000.dmac
+151:          0          0       GIC  49 Level     f8003000.dmac
+152:          0          0       GIC  72 Level     f8003000.dmac
+153:          0          0       GIC  73 Level     f8003000.dmac
+154:          0          0       GIC  74 Level     f8003000.dmac
+155:          0          0       GIC  75 Level     f8003000.dmac
+156:          0          0       GIC  40 Level     f8007000.devcfg
+163:          0          0       GIC  41 Edge      f8005000.watchdog
+IPI1:          0          0  Timer broadcast interrupts
+IPI2:  240848093  239178163  Rescheduling interrupts
+IPI3:          0          0  Function call interrupts
+IPI4:         15         41  Single function call interrupts
+IPI5:          0          0  CPU stop interrupts
+IPI6:          0          0  IRQ work interrupts
+IPI7:          0          0  completion interrupts
+Err:          0

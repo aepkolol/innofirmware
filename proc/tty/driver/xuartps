@@ -1,0 +1,2 @@
+serinfo:1.0 driver revision:
+0: uart:xuartps mmio:0xE0001000 irq:143 tx:2398 rx:0 RTS|CTS|DTR|DSR|CD

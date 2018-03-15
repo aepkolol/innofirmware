@@ -1,0 +1,23 @@
+
+        0 transmitted frames (TXF)
+        0 received frames (RXF)
+        0 matched frames (RXMF)
+
+        0 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+        0 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+        0 % max match ratio (MRXMR)
+        0 frames/s max tx rate (MTXR)
+        0 frames/s max rx rate (MRXR)
+
+        0 current receive list entries (CRCV)
+        0 maximum receive list entries (MRCV)
+
+      122 statistic resets (STR)
+      122 user statistic resets (USTR)
+

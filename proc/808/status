@@ -1,0 +1,40 @@
+Name:	python3.4
+State:	S (sleeping)
+Tgid:	808
+Ngid:	0
+Pid:	808
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	32
+Groups:	
+VmPeak:	   41708 kB
+VmSize:	   41708 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	   10888 kB
+VmRSS:	   10888 kB
+VmData:	   34888 kB
+VmStk:	     136 kB
+VmExe:	       4 kB
+VmLib:	    5464 kB
+VmPTE:	      24 kB
+VmPMD:	       0 kB
+VmSwap:	       0 kB
+Threads:	4
+SigQ:	0/1841
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000001001006
+SigCgt:	0000000180000000
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+Cpus_allowed:	3
+Cpus_allowed_list:	0-1
+voluntary_ctxt_switches:	50564
+nonvoluntary_ctxt_switches:	193

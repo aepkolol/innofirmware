@@ -1,0 +1,1 @@
+console=ttyPS0,115200 noinitrd root=/dev/mtdblock4 rw earlyprintk rootfstype=jffs2 rootwait

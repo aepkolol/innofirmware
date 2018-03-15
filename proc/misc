@@ -1,0 +1,8 @@
+ 59 memory_bandwidth
+ 60 network_throughput
+ 61 network_latency
+ 62 cpu_dma_latency
+130 watchdog
+  1 psaux
+237 loop-control
+ 63 vga_arbiter

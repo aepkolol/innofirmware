@@ -1,0 +1,19 @@
+00008000-000f0000 r-xp 00000000 1f:04 16         /bin/busybox
+000f0000-000f1000 rw-p 000e8000 1f:04 16         /bin/busybox
+000f1000-00112000 rw-p 00000000 00:00 0          [heap]
+b6d2f000-b6e59000 r-xp 00000000 1f:04 481        /lib/libc-2.21.so
+b6e59000-b6e61000 ---p 0012a000 1f:04 481        /lib/libc-2.21.so
+b6e61000-b6e63000 r--p 0012a000 1f:04 481        /lib/libc-2.21.so
+b6e63000-b6e64000 rw-p 0012c000 1f:04 481        /lib/libc-2.21.so
+b6e64000-b6e67000 rw-p 00000000 00:00 0 
+b6e67000-b6ed5000 r-xp 00000000 1f:04 496        /lib/libm-2.21.so
+b6ed5000-b6edc000 ---p 0006e000 1f:04 496        /lib/libm-2.21.so
+b6edc000-b6edd000 r--p 0006d000 1f:04 496        /lib/libm-2.21.so
+b6edd000-b6ede000 rw-p 0006e000 1f:04 496        /lib/libm-2.21.so
+b6ede000-b6efe000 r-xp 00000000 1f:04 474        /lib/ld-2.21.so
+b6f02000-b6f05000 rw-p 00000000 00:00 0 
+b6f05000-b6f06000 r--p 0001f000 1f:04 474        /lib/ld-2.21.so
+b6f06000-b6f07000 rw-p 00020000 1f:04 474        /lib/ld-2.21.so
+be844000-be865000 rw-p 00000000 00:00 0          [stack]
+bedda000-beddb000 r-xp 00000000 00:00 0          [sigpage]
+ffff0000-ffff1000 r-xp 00000000 00:00 0          [vectors]

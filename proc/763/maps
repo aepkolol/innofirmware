@@ -1,0 +1,37 @@
+00008000-000f0000 r-xp 00000000 1f:04 16         /bin/busybox
+000f0000-000f1000 rw-p 000e8000 1f:04 16         /bin/busybox
+000f1000-00112000 rw-p 00000000 00:00 0          [heap]
+b6d17000-b6d23000 r-xp 00000000 1f:04 507        /lib/libnss_files-2.21.so
+b6d23000-b6d2a000 ---p 0000c000 1f:04 507        /lib/libnss_files-2.21.so
+b6d2a000-b6d2b000 r--p 0000b000 1f:04 507        /lib/libnss_files-2.21.so
+b6d2b000-b6d2c000 rw-p 0000c000 1f:04 507        /lib/libnss_files-2.21.so
+b6d2c000-b6d37000 r-xp 00000000 1f:04 511        /lib/libnss_nis-2.21.so
+b6d37000-b6d3e000 ---p 0000b000 1f:04 511        /lib/libnss_nis-2.21.so
+b6d3e000-b6d3f000 r--p 0000a000 1f:04 511        /lib/libnss_nis-2.21.so
+b6d3f000-b6d40000 rw-p 0000b000 1f:04 511        /lib/libnss_nis-2.21.so
+b6d40000-b6d53000 r-xp 00000000 1f:04 499        /lib/libnsl-2.21.so
+b6d53000-b6d5a000 ---p 00013000 1f:04 499        /lib/libnsl-2.21.so
+b6d5a000-b6d5b000 r--p 00012000 1f:04 499        /lib/libnsl-2.21.so
+b6d5b000-b6d5c000 rw-p 00013000 1f:04 499        /lib/libnsl-2.21.so
+b6d5c000-b6d5e000 rw-p 00000000 00:00 0 
+b6d5e000-b6d66000 r-xp 00000000 1f:04 501        /lib/libnss_compat-2.21.so
+b6d66000-b6d6d000 ---p 00008000 1f:04 501        /lib/libnss_compat-2.21.so
+b6d6d000-b6d6e000 r--p 00007000 1f:04 501        /lib/libnss_compat-2.21.so
+b6d6e000-b6d6f000 rw-p 00008000 1f:04 501        /lib/libnss_compat-2.21.so
+b6d6f000-b6e99000 r-xp 00000000 1f:04 481        /lib/libc-2.21.so
+b6e99000-b6ea1000 ---p 0012a000 1f:04 481        /lib/libc-2.21.so
+b6ea1000-b6ea3000 r--p 0012a000 1f:04 481        /lib/libc-2.21.so
+b6ea3000-b6ea4000 rw-p 0012c000 1f:04 481        /lib/libc-2.21.so
+b6ea4000-b6ea7000 rw-p 00000000 00:00 0 
+b6ea7000-b6f15000 r-xp 00000000 1f:04 496        /lib/libm-2.21.so
+b6f15000-b6f1c000 ---p 0006e000 1f:04 496        /lib/libm-2.21.so
+b6f1c000-b6f1d000 r--p 0006d000 1f:04 496        /lib/libm-2.21.so
+b6f1d000-b6f1e000 rw-p 0006e000 1f:04 496        /lib/libm-2.21.so
+b6f1e000-b6f3e000 r-xp 00000000 1f:04 474        /lib/ld-2.21.so
+b6f42000-b6f43000 rw-p 00000000 00:00 0 
+b6f43000-b6f45000 rw-p 00000000 00:00 0 
+b6f45000-b6f46000 r--p 0001f000 1f:04 474        /lib/ld-2.21.so
+b6f46000-b6f47000 rw-p 00020000 1f:04 474        /lib/ld-2.21.so
+bec28000-bec49000 rw-p 00000000 00:00 0          [stack]
+bee97000-bee98000 r-xp 00000000 00:00 0          [sigpage]
+ffff0000-ffff1000 r-xp 00000000 00:00 0          [vectors]

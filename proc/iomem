@@ -1,0 +1,25 @@
+00000000-0fffffff : System RAM
+  00008000-006c03c7 : Kernel code
+  00702000-00772c73 : Kernel data
+41e00000-41e0ffff : /amba_pl/axi_quad_spi@41e00000
+41e10000-41e1ffff : /amba_pl/axi_quad_spi@41e10000
+41e20000-41e2ffff : /amba_pl/axi_quad_spi@41e20000
+41e30000-41e3ffff : /amba_pl/axi_quad_spi@41e30000
+41e40000-41e4ffff : /amba_pl/axi_quad_spi@41e40000
+41e50000-41e5ffff : /amba_pl/axi_quad_spi@41e50000
+41e60000-41e6ffff : /amba_pl/axi_quad_spi@41e60000
+41e70000-41e7ffff : /amba_pl/axi_quad_spi@41e70000
+41e80000-41e8ffff : /amba_pl/axi_quad_spi@41e80000
+e0001000-e0001fff : xuartps
+e000a000-e000afff : /amba/gpio@e000a000
+e000b000-e000bfff : /amba/ethernet@e000b000
+e000e000-e000efff : /amba/memory-controller@e000e000
+e0100000-e0100fff : mmc0
+e1000000-e1ffffff : /amba/memory-controller@e000e000/flash@e1000000
+f8003000-f8003fff : /amba/dmac@f8003000
+  f8003000-f8003fff : /amba/dmac@f8003000
+f8005000-f8005fff : /amba/watchdog@f8005000
+f8007000-f80070ff : /amba/devcfg@f8007000
+f8007100-f800711f : /amba/adc@f8007100
+f800c000-f800cfff : /amba/ocmc@f800c000
+fffc0000-ffffffff : f800c000.ocmc

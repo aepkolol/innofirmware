@@ -1,0 +1,40 @@
+Name:	cg@API
+State:	S (sleeping)
+Tgid:	18268
+Ngid:	0
+Pid:	20824
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	32
+Groups:	
+VmPeak:	  140356 kB
+VmSize:	  140352 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    5016 kB
+VmRSS:	    5016 kB
+VmData:	  137096 kB
+VmStk:	     136 kB
+VmExe:	     512 kB
+VmLib:	    2264 kB
+VmPTE:	      44 kB
+VmPMD:	       0 kB
+VmSwap:	       0 kB
+Threads:	14
+SigQ:	0/1841
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001004
+SigCgt:	0000000180004022
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+Cpus_allowed:	3
+Cpus_allowed_list:	0-1
+voluntary_ctxt_switches:	11356
+nonvoluntary_ctxt_switches:	99786

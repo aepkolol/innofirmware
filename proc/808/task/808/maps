@@ -1,0 +1,109 @@
+00008000-00009000 r-xp 00000000 1f:04 97         /bin/python3.4
+00010000-00011000 rw-p 00000000 1f:04 97         /bin/python3.4
+00011000-00213000 rw-p 00000000 00:00 0          [heap]
+b483d000-b48e3000 r-xp 00000000 1f:04 1339       /lib/python3.4/lib-dynload/unicodedata.cpython-34m.so
+b48e3000-b48ea000 ---p 000a6000 1f:04 1339       /lib/python3.4/lib-dynload/unicodedata.cpython-34m.so
+b48ea000-b4900000 rw-p 000a5000 1f:04 1339       /lib/python3.4/lib-dynload/unicodedata.cpython-34m.so
+b4900000-b4901000 ---p 00000000 00:00 0 
+b4901000-b5100000 rw-p 00000000 00:00 0 
+b5100000-b5121000 rw-p 00000000 00:00 0 
+b5121000-b5200000 ---p 00000000 00:00 0 
+b5200000-b5221000 rw-p 00000000 00:00 0 
+b5221000-b5300000 ---p 00000000 00:00 0 
+b5300000-b5301000 ---p 00000000 00:00 0 
+b5301000-b5b00000 rw-p 00000000 00:00 0 
+b5b00000-b5b21000 rw-p 00000000 00:00 0 
+b5b21000-b5c00000 ---p 00000000 00:00 0 
+b5c53000-b5c54000 ---p 00000000 00:00 0 
+b5c54000-b6493000 rw-p 00000000 00:00 0 
+b64f4000-b65b4000 rw-p 00000000 00:00 0 
+b65d5000-b65e9000 r-xp 00000000 1f:04 1312       /lib/python3.4/lib-dynload/_pickle.cpython-34m.so
+b65e9000-b65f1000 ---p 00014000 1f:04 1312       /lib/python3.4/lib-dynload/_pickle.cpython-34m.so
+b65f1000-b65f4000 rw-p 00014000 1f:04 1312       /lib/python3.4/lib-dynload/_pickle.cpython-34m.so
+b65f4000-b66b4000 rw-p 00000000 00:00 0 
+b66c2000-b66d3000 r-xp 00000000 1f:04 1303       /lib/python3.4/lib-dynload/_datetime.cpython-34m.so
+b66d3000-b66db000 ---p 00011000 1f:04 1303       /lib/python3.4/lib-dynload/_datetime.cpython-34m.so
+b66db000-b66dd000 rw-p 00011000 1f:04 1303       /lib/python3.4/lib-dynload/_datetime.cpython-34m.so
+b66dd000-b66e2000 r-xp 00000000 1f:04 1324       /lib/python3.4/lib-dynload/binascii.cpython-34m.so
+b66e2000-b66e9000 ---p 00005000 1f:04 1324       /lib/python3.4/lib-dynload/binascii.cpython-34m.so
+b66e9000-b66ea000 rw-p 00004000 1f:04 1324       /lib/python3.4/lib-dynload/binascii.cpython-34m.so
+b66ea000-b66ec000 r-xp 00000000 1f:04 1314       /lib/python3.4/lib-dynload/_random.cpython-34m.so
+b66ec000-b66f3000 ---p 00002000 1f:04 1314       /lib/python3.4/lib-dynload/_random.cpython-34m.so
+b66f3000-b66f4000 rw-p 00001000 1f:04 1314       /lib/python3.4/lib-dynload/_random.cpython-34m.so
+b66f4000-b66ff000 r-xp 00000000 1f:04 1317       /lib/python3.4/lib-dynload/_sha512.cpython-34m.so
+b66ff000-b6707000 ---p 0000b000 1f:04 1317       /lib/python3.4/lib-dynload/_sha512.cpython-34m.so
+b6707000-b6708000 rw-p 0000b000 1f:04 1317       /lib/python3.4/lib-dynload/_sha512.cpython-34m.so
+b6708000-b670c000 r-xp 00000000 1f:04 1316       /lib/python3.4/lib-dynload/_sha256.cpython-34m.so
+b670c000-b6713000 ---p 00004000 1f:04 1316       /lib/python3.4/lib-dynload/_sha256.cpython-34m.so
+b6713000-b6714000 rw-p 00003000 1f:04 1316       /lib/python3.4/lib-dynload/_sha256.cpython-34m.so
+b6714000-b6716000 r-xp 00000000 1f:04 1315       /lib/python3.4/lib-dynload/_sha1.cpython-34m.so
+b6716000-b671e000 ---p 00002000 1f:04 1315       /lib/python3.4/lib-dynload/_sha1.cpython-34m.so
+b671e000-b671f000 rw-p 00002000 1f:04 1315       /lib/python3.4/lib-dynload/_sha1.cpython-34m.so
+b671f000-b6722000 r-xp 00000000 1f:04 1309       /lib/python3.4/lib-dynload/_md5.cpython-34m.so
+b6722000-b6729000 ---p 00003000 1f:04 1309       /lib/python3.4/lib-dynload/_md5.cpython-34m.so
+b6729000-b672a000 rw-p 00002000 1f:04 1309       /lib/python3.4/lib-dynload/_md5.cpython-34m.so
+b672a000-b672c000 r-xp 00000000 1f:04 1327       /lib/python3.4/lib-dynload/grp.cpython-34m.so
+b672c000-b6733000 ---p 00002000 1f:04 1327       /lib/python3.4/lib-dynload/grp.cpython-34m.so
+b6733000-b6734000 rw-p 00001000 1f:04 1327       /lib/python3.4/lib-dynload/grp.cpython-34m.so
+b6734000-b6774000 rw-p 00000000 00:00 0 
+b6774000-b677b000 r-xp 00000000 1f:04 1318       /lib/python3.4/lib-dynload/_struct.cpython-34m.so
+b677b000-b6783000 ---p 00007000 1f:04 1318       /lib/python3.4/lib-dynload/_struct.cpython-34m.so
+b6783000-b6785000 rw-p 00007000 1f:04 1318       /lib/python3.4/lib-dynload/_struct.cpython-34m.so
+b6785000-b67a3000 r-xp 00000000 1f:04 1301       /lib/python3.4/lib-dynload/_ctypes.cpython-34m.so
+b67a3000-b67aa000 ---p 0001e000 1f:04 1301       /lib/python3.4/lib-dynload/_ctypes.cpython-34m.so
+b67aa000-b67ad000 rw-p 0001d000 1f:04 1301       /lib/python3.4/lib-dynload/_ctypes.cpython-34m.so
+b67ad000-b67b1000 r-xp 00000000 1f:04 1334       /lib/python3.4/lib-dynload/select.cpython-34m.so
+b67b1000-b67b8000 ---p 00004000 1f:04 1334       /lib/python3.4/lib-dynload/select.cpython-34m.so
+b67b8000-b67ba000 rw-p 00003000 1f:04 1334       /lib/python3.4/lib-dynload/select.cpython-34m.so
+b67ba000-b67bd000 r-xp 00000000 1f:04 1313       /lib/python3.4/lib-dynload/_posixsubprocess.cpython-34m.so
+b67bd000-b67c4000 ---p 00003000 1f:04 1313       /lib/python3.4/lib-dynload/_posixsubprocess.cpython-34m.so
+b67c4000-b67c5000 rw-p 00002000 1f:04 1313       /lib/python3.4/lib-dynload/_posixsubprocess.cpython-34m.so
+b67c5000-b6836000 rw-p 00000000 00:00 0 
+b6836000-b6840000 r-xp 00000000 1f:04 1307       /lib/python3.4/lib-dynload/_json.cpython-34m.so
+b6840000-b6847000 ---p 0000a000 1f:04 1307       /lib/python3.4/lib-dynload/_json.cpython-34m.so
+b6847000-b6848000 rw-p 00009000 1f:04 1307       /lib/python3.4/lib-dynload/_json.cpython-34m.so
+b6848000-b68c8000 rw-p 00000000 00:00 0 
+b68c8000-b68cd000 r-xp 00000000 1f:04 1338       /lib/python3.4/lib-dynload/time.cpython-34m.so
+b68cd000-b68d4000 ---p 00005000 1f:04 1338       /lib/python3.4/lib-dynload/time.cpython-34m.so
+b68d4000-b68d6000 rw-p 00004000 1f:04 1338       /lib/python3.4/lib-dynload/time.cpython-34m.so
+b68d6000-b6916000 rw-p 00000000 00:00 0 
+b6916000-b6918000 r-xp 00000000 1f:04 1306       /lib/python3.4/lib-dynload/_heapq.cpython-34m.so
+b6918000-b6920000 ---p 00002000 1f:04 1306       /lib/python3.4/lib-dynload/_heapq.cpython-34m.so
+b6920000-b6922000 rw-p 00002000 1f:04 1306       /lib/python3.4/lib-dynload/_heapq.cpython-34m.so
+b6922000-b6ae2000 rw-p 00000000 00:00 0 
+b6ae2000-b6c0c000 r-xp 00000000 1f:04 481        /lib/libc-2.21.so
+b6c0c000-b6c14000 ---p 0012a000 1f:04 481        /lib/libc-2.21.so
+b6c14000-b6c16000 r--p 0012a000 1f:04 481        /lib/libc-2.21.so
+b6c16000-b6c17000 rw-p 0012c000 1f:04 481        /lib/libc-2.21.so
+b6c17000-b6c1a000 rw-p 00000000 00:00 0 
+b6c1a000-b6c37000 r-xp 00000000 1f:04 494        /lib/libgcc_s.so.1
+b6c37000-b6c3e000 ---p 0001d000 1f:04 494        /lib/libgcc_s.so.1
+b6c3e000-b6c3f000 rw-p 0001c000 1f:04 494        /lib/libgcc_s.so.1
+b6c3f000-b6cad000 r-xp 00000000 1f:04 496        /lib/libm-2.21.so
+b6cad000-b6cb4000 ---p 0006e000 1f:04 496        /lib/libm-2.21.so
+b6cb4000-b6cb5000 r--p 0006d000 1f:04 496        /lib/libm-2.21.so
+b6cb5000-b6cb6000 rw-p 0006e000 1f:04 496        /lib/libm-2.21.so
+b6cb6000-b6cb9000 r-xp 00000000 1f:04 530        /lib/libutil-2.21.so
+b6cb9000-b6cc1000 ---p 00003000 1f:04 530        /lib/libutil-2.21.so
+b6cc1000-b6cc2000 r--p 00003000 1f:04 530        /lib/libutil-2.21.so
+b6cc2000-b6cc3000 rw-p 00004000 1f:04 530        /lib/libutil-2.21.so
+b6cc3000-b6cc7000 r-xp 00000000 1f:04 491        /lib/libdl-2.21.so
+b6cc7000-b6cce000 ---p 00004000 1f:04 491        /lib/libdl-2.21.so
+b6cce000-b6ccf000 r--p 00003000 1f:04 491        /lib/libdl-2.21.so
+b6ccf000-b6cd0000 rw-p 00004000 1f:04 491        /lib/libdl-2.21.so
+b6cd0000-b6ce5000 r-xp 00000000 1f:04 516        /lib/libpthread-2.21.so
+b6ce5000-b6cec000 ---p 00015000 1f:04 516        /lib/libpthread-2.21.so
+b6cec000-b6ced000 r--p 00014000 1f:04 516        /lib/libpthread-2.21.so
+b6ced000-b6cee000 rw-p 00015000 1f:04 516        /lib/libpthread-2.21.so
+b6cee000-b6cf0000 rw-p 00000000 00:00 0 
+b6cf0000-b6f30000 r-xp 00000000 1f:04 519        /lib/libpython3.4m.so.1.0
+b6f30000-b6f79000 rw-p 00240000 1f:04 519        /lib/libpython3.4m.so.1.0
+b6f79000-b6f8e000 rw-p 00000000 00:00 0 
+b6f8e000-b6fae000 r-xp 00000000 1f:04 474        /lib/ld-2.21.so
+b6fb1000-b6fb2000 rwxp 00000000 00:00 0 
+b6fb2000-b6fb5000 rw-p 00000000 00:00 0 
+b6fb5000-b6fb6000 r--p 0001f000 1f:04 474        /lib/ld-2.21.so
+b6fb6000-b6fb7000 rw-p 00020000 1f:04 474        /lib/ld-2.21.so
+bee84000-beea5000 rw-p 00000000 00:00 0          [stack]
+befad000-befae000 r-xp 00000000 00:00 0          [sigpage]
+ffff0000-ffff1000 r-xp 00000000 00:00 0          [vectors]

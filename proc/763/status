@@ -1,0 +1,40 @@
+Name:	telnetd
+State:	S (sleeping)
+Tgid:	763
+Ngid:	0
+Pid:	763
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	32
+Groups:	
+VmPeak:	    3428 kB
+VmSize:	    3428 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    1140 kB
+VmRSS:	    1140 kB
+VmData:	     168 kB
+VmStk:	     136 kB
+VmExe:	     928 kB
+VmLib:	    1960 kB
+VmPTE:	       8 kB
+VmPMD:	       0 kB
+VmSwap:	       0 kB
+Threads:	1
+SigQ:	0/1841
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000011000
+SigCgt:	0000000000000000
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+Cpus_allowed:	3
+Cpus_allowed_list:	0-1
+voluntary_ctxt_switches:	1128
+nonvoluntary_ctxt_switches:	78

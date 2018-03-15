@@ -1,0 +1,188 @@
+Timer List Version: v0.8
+HRTIMER_MAX_CLOCK_BASES: 4
+now at 31359051461713 nsecs
+
+cpu: 0
+ clock 0:
+  .base:       cfdcbc40
+  .index:      0
+  .resolution: 1 nsecs
+  .get_time:   ktime_get
+  .offset:     0 nsecs
+active timers:
+ #0: <cfdcbe60>, tick_sched_timer, S:01, tick_nohz_restart, swapper/0/0
+ # expires at 31359060000000-31359060000000 nsecs [in 8538287 to 8538287 nsecs]
+ #1: <cd803f18>, hrtimer_wakeup, S:01, do_nanosleep, cg@2/Miner/20800
+ # expires at 31359062185977-31359062235977 nsecs [in 10724264 to 10774264 nsecs]
+ #2: <cdee7f18>, hrtimer_wakeup, S:01, do_nanosleep, cg@7/Miner/20805
+ # expires at 31359063386307-31359063436307 nsecs [in 11924594 to 11974594 nsecs]
+ #3: <cd831f28>, hrtimer_wakeup, S:01, do_nanosleep, cg@Watchdog/20823
+ # expires at 31359925080741-31359925130741 nsecs [in 873619028 to 873669028 nsecs]
+ #4: <cdea3ae0>, hrtimer_wakeup, S:01, schedule_hrtimeout_range_clock, cg@0/RStratum/20814
+ # expires at 31440629219507-31440719219504 nsecs [in 81577757794 to 81667757791 nsecs]
+ #5: <cf8da758>, it_real_fn, S:01, do_setitimer, ftpd/7231
+ # expires at 31479028380181-31479028380181 nsecs [in 119976918468 to 119976918468 nsecs]
+ #6: <cf886758>, it_real_fn, S:01, do_setitimer, ftpd/7415
+ # expires at 31479049145791-31479049145791 nsecs [in 119997684078 to 119997684078 nsecs]
+ #7: <cdc4ee18>, it_real_fn, S:01, do_setitimer, ftpd/7417
+ # expires at 31479049689205-31479049689205 nsecs [in 119998227492 to 119998227492 nsecs]
+ #8: <cdeefb68>, hrtimer_wakeup, S:01, schedule_hrtimeout_range_clock, ntpd/793
+ # expires at 31794316097801-31794416097801 nsecs [in 435264636088 to 435364636088 nsecs]
+ #9: <c0744748>, sched_clock_poll, S:01, sched_clock_postinit, swapper/0/0
+ # expires at 35184372088824-35184372088824 nsecs [in 3825320627111 to 3825320627111 nsecs]
+ clock 1:
+  .base:       cfdcbc60
+  .index:      1
+  .resolution: 1 nsecs
+  .get_time:   ktime_get_real
+  .offset:     1521041977764915333 nsecs
+active timers:
+ clock 2:
+  .base:       cfdcbc80
+  .index:      2
+  .resolution: 1 nsecs
+  .get_time:   ktime_get_boottime
+  .offset:     0 nsecs
+active timers:
+ clock 3:
+  .base:       cfdcbca0
+  .index:      3
+  .resolution: 1 nsecs
+  .get_time:   ktime_get_clocktai
+  .offset:     1521041977764915333 nsecs
+active timers:
+  .expires_next   : 31359060000000 nsecs
+  .hres_active    : 1
+  .nr_events      : 6427998
+  .nr_retries     : 2980
+  .nr_hangs       : 0
+  .max_hang_time  : 0
+  .nohz_mode      : 2
+  .last_tick      : 31355700000000 nsecs
+  .tick_stopped   : 0
+  .idle_jiffies   : 3105569
+  .idle_calls     : 7584310
+  .idle_sleeps    : 1925577
+  .idle_entrytime : 31357108754899 nsecs
+  .idle_waketime  : 31355700040507 nsecs
+  .idle_exittime  : 31355700043183 nsecs
+  .idle_sleeptime : 911979018690 nsecs
+  .iowait_sleeptime: 233413345 nsecs
+  .last_jiffies   : 3105710
+  .next_timer     : 31356600000000
+  .idle_expires   : 31356000000000 nsecs
+jiffies: 3105905
+
+cpu: 1
+ clock 0:
+  .base:       cfdd7c40
+  .index:      0
+  .resolution: 1 nsecs
+  .get_time:   ktime_get
+  .offset:     0 nsecs
+active timers:
+ #0: <cfdd7e60>, tick_sched_timer, S:01, tick_nohz_restart, swapper/1/0
+ # expires at 31359060000000-31359060000000 nsecs [in 8538287 to 8538287 nsecs]
+ #1: <cd84df18>, hrtimer_wakeup, S:01, do_nanosleep, cg@3/Miner/20801
+ # expires at 31359064116226-31359064166226 nsecs [in 12654513 to 12704513 nsecs]
+ #2: <cd837f18>, hrtimer_wakeup, S:01, do_nanosleep, cg@Watchpool/20822
+ # expires at 31360438234682-31360438284682 nsecs [in 1386772969 to 1386822969 nsecs]
+ #3: <cd84bae0>, hrtimer_wakeup, S:01, schedule_hrtimeout_range_clock, python3.4/885
+ # expires at 31378805649055-31378865649050 nsecs [in 19754187342 to 19814187337 nsecs]
+ clock 1:
+  .base:       cfdd7c60
+  .index:      1
+  .resolution: 1 nsecs
+  .get_time:   ktime_get_real
+  .offset:     1521041977764915333 nsecs
+active timers:
+ clock 2:
+  .base:       cfdd7c80
+  .index:      2
+  .resolution: 1 nsecs
+  .get_time:   ktime_get_boottime
+  .offset:     0 nsecs
+active timers:
+ clock 3:
+  .base:       cfdd7ca0
+  .index:      3
+  .resolution: 1 nsecs
+  .get_time:   ktime_get_clocktai
+  .offset:     1521041977764915333 nsecs
+active timers:
+  .expires_next   : 31359060000000 nsecs
+  .hres_active    : 1
+  .nr_events      : 6428772
+  .nr_retries     : 3009
+  .nr_hangs       : 0
+  .max_hang_time  : 0
+  .nohz_mode      : 2
+  .last_tick      : 31358120000000 nsecs
+  .tick_stopped   : 0
+  .idle_jiffies   : 3105811
+  .idle_calls     : 7703029
+  .idle_sleeps    : 2024519
+  .idle_entrytime : 31358114101625 nsecs
+  .idle_waketime  : 31358114101625 nsecs
+  .idle_exittime  : 31358114117459 nsecs
+  .idle_sleeptime : 968694449032 nsecs
+  .iowait_sleeptime: 300158650 nsecs
+  .last_jiffies   : 3105811
+  .next_timer     : 31358690000000
+  .idle_expires   : 31358690000000 nsecs
+jiffies: 3105905
+
+Tick Device: mode:     1
+Broadcast device
+Clock Event Device: ttc_clockevent
+ max_delta_ns:   1207932480
+ min_delta_ns:   18433
+ mult:           233015
+ shift:          32
+ mode:           1
+ next_event:     9223372036854775807 nsecs
+ set_next_event: ttc_set_next_event
+ shutdown: ttc_shutdown
+ periodic: ttc_set_periodic
+ oneshot:  ttc_shutdown
+ resume:   ttc_resume
+ event_handler:  tick_handle_oneshot_broadcast
+ retries:        0
+
+tick_broadcast_mask: 0
+tick_broadcast_oneshot_mask: 0
+
+Tick Device: mode:     1
+Per CPU device: 0
+Clock Event Device: local_timer
+ max_delta_ns:   12884902006
+ min_delta_ns:   1000
+ mult:           715827876
+ shift:          31
+ mode:           3
+ next_event:     31359060000000 nsecs
+ set_next_event: twd_set_next_event
+ shutdown: twd_shutdown
+ periodic: twd_set_periodic
+ oneshot:  twd_set_oneshot
+ resume:   twd_shutdown
+ event_handler:  hrtimer_interrupt
+ retries:        628
+
+Tick Device: mode:     1
+Per CPU device: 1
+Clock Event Device: local_timer
+ max_delta_ns:   12884902006
+ min_delta_ns:   1000
+ mult:           715827876
+ shift:          31
+ mode:           3
+ next_event:     31359060000000 nsecs
+ set_next_event: twd_set_next_event
+ shutdown: twd_shutdown
+ periodic: twd_set_periodic
+ oneshot:  twd_set_oneshot
+ resume:   twd_shutdown
+ event_handler:  hrtimer_interrupt
+ retries:        661
+
