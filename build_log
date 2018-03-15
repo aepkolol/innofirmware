@@ -1,0 +1,33 @@
+10.0.50.98 
+auto
+2018-02-09 11:13:41
+zynq_platform
+05ce00409af97f6a75ee5de76f761964a406de7f,huwt,huwt@innosilicon.com.cn,2018-01-09 13:54:23 +0800
+zynq_platform_g19
+8447def1eadf774ed16ce6929e15eb2d50b9c33c,huwt,huwt@innosilicon.com.cn,2018-01-09 09:48:40 +0800
+u-boot-xlnx
+dbbdb4be24fac4f2e99aa039139e30051b5ac7d2,PengPeng,pengp@innosilicon.com.cn,2018-02-08 16:21:34 +0800
+linux-xlnx
+cb948ea4ad169bbfffe45df01111307d1a4aaa8f,huwt,huwt@innosilicon.com.cn,2018-01-09 15:48:46 +0800
+busybox
+51cbe1f0a1e9179290048bc2a25cbe6a45513daf,PengPeng,pengp@innosilicon.com.cn,2017-12-14 13:35:24 +0800
+memtester
+ebc666aa792b8f25f7395661e5d34a97bb27b4d2,chencx,345057113@qq.com,2017-11-08 16:18:14 +0800
+curl
+d6001ee284226d5bc33158930bf512a1ddc70e63,chencx,345057113@qq.com,2017-11-08 16:22:26 +0800
+openssl
+9421e957d0c30459df9389427d601e9aa4a3362e,PengPeng,pengp@innosilicon.com.cn,2017-09-11 14:05:48 +0800
+sgminer
+f02870a0ed3f1ee79923d497cec8cabe208186e7,yex,yex@innosilicon.com.cn,2018-01-18 18:06:23 +0800
+cpuminer
+946befcbbcfa987eeea816cac59a1aaa86960370,PengPeng,pengp@innosilicon.com.cn,2017-09-13 10:58:17 +0800
+cgminer
+0a2881785c2cf14b846da2c9cb07510b2bdba22f,huwt,huwt@innosilicon.com.cn,2018-01-26 16:35:40 +0800
+cgminer4a8
+67ef3634a80bcd4432885f45fe0bdb7485ada7e0,WangPeng,wangpeng@innosilicon.com.cn,2018-02-08 17:16:00 +0800
+cgminer4a5
+de2dc378c412259451d0cea55be2fb0e68c55bea,chencx,345057113@qq.com,2017-12-28 17:16:34 +0800
+cpython
+4973e48bd7ab0bb58688ce4845bd7b2b532429f7,chencx,345057113@qq.com,2017-11-08 16:24:26 +0800
+rootfs
+9f036fecdb1c63eb8b0b7fcb7ffe0fe517742ddd,PengPeng,pengp@innosilicon.com.cn,2018-02-09 09:35:39 +0800
